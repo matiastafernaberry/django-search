@@ -1,0 +1,121 @@
+body{
+  background-color: #a5a582;
+  background-color: #fff;
+  background-color: #fff;
+  font-size: 14px;}
+img{
+  /*max-width: 80%;
+  min-width: 80%;
+
+  -webkit-filter: drop-shadow(8px 8px 10px gray); /* Safari 6.0 - 9.0 */
+  /*filter: drop-shadow(8px 8px 10px gray);
+
+  -webkit-filter: sepia(10%) grayscale(10%) brightness(110%) contrast(110%);  /* Safari */
+  /*filter: sepia(10%) grayscale(10%) brightness(110%) contrast(110%);
+  
+
+  -webkit-box-shadow: 22px 27px 61px -21px rgba(70, 55, 11, 0.85);
+  -moz-box-shadow: 22px 27px 61px -21px rgba(70, 55, 11, 0.85);
+  box-shadow: 22px 27px 61px -21px rgba(70, 55, 11, 0.85);
+
+  -ms-transform: skewY(20deg); /* IE 9 */
+  /*-webkit-transform: skewY(-10deg); /* Safari 3-8 */
+  /*transform: skewY(-5deg);*/
+      background-color: black;
+    /* transform: skewY(
+-5deg
+); */
+    width: 39%;
+    border-radius: 50px;
+}
+img:hover{
+  transform: skewY(0deg);
+}
+a{
+  color: #000;
+  
+}
+.container{
+  margin-top: 2rem;
+}
+.title{
+  font-size: 2.2rem;
+}
+.title-busqueda{
+  padding-bottom: 3rem;
+}
+.logo{
+  font-family: 'Dosis', cursive;
+  font-weight: bold;
+  font-size: 4rem;
+  padding-top: 1.5rem;
+  font-family: 'Alfa Slab One', cursive;
+  font-family: 'Orbitron', sans-serif;
+  font-family:  'Turret Road', cursive;
+}
+.site-main{
+  padding-top: 4rem;
+}
+.navbar{
+  padding-bottom: 1rem;
+}
+.col-sm-4{
+  padding: 3rem;
+  
+  -webkit-box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
+  -moz-box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
+  box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
+  /*transform: skewY(5deg);*/
+}
+.col-sm-4:hover{
+  -webkit-box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
+  -moz-box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
+  box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
+}
+.news-from{
+  background-color: #ececec;
+    color: #444;
+    padding: 10px 4px;
+    font-size: 12px;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.content-title{
+  font-family: 'Asap', sans-serif;
+
+
+}
+.entry-title{
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+}
+.teaser-content{
+  padding: 2rem;
+}
+.fast {
+    -vendor-animation-duration: 1s;
+    -vendor-animation-delay: 0s;
+}
+.slow {
+    -vendor-animation-duration: 3s;
+    -vendor-animation-delay: 1s;
+}
+.reallyslow {
+    -vendor-animation-duration: 6s;
+    -vendor-animation-delay: 3s;
+}
+.texto-noticia{
+  line-height: 2.5rem;
+  font-size: 2rem;
+}
+.title-title{
+  /*transform: skewY(-4deg);*/
+}
+.description{
+  font-size: 3rem;
+  height: auto;
+}
+.buzztracker{
+  font-size: 16px;
+}

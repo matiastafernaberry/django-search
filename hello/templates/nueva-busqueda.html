@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+{% block body %}
+  <!-- Page Content -->
+  {% autoescape on %}
+  <div>
+    <div id="main" class="site-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">&nbsp;</div>
+          <div class="col-sm-6 title-busqueda">
+            <h3>Configuración nueva búsqueda</h3>
+          </div>
+          <div class="col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">&nbsp;</div>
+          <div class="formulario col-sm-6">
+            <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Proyecto</label>
+                <input type="text" class="form-control" id="proyecto" aria-describedby="emailHelp" name="proyecto">
+                <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Búsqueda</label>
+                <input type="text" class="form-control" id="busqueda" name="busqueda">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Tipo de Búsqueda</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios1" value="busqueda" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Búsqueda
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios2" value="imagen">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Imagen
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios2" value="video">
+                  <label class="form-check-label" for="exampleRadios3">
+                    Video
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Pais</label>
+                {% if lista_paises %}
+                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="paises">
+                    <option selected>Choose...</option>
+                    {% for key, value in lista_paises.items %}  
+                      <option value="{{value}}">{{key}}</option>
+                    {% endfor %}
+                  </select>
+                {% endif %}
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-sm-3">&nbsp;</div>
+      </div>
+      <div class="row">
+        {% if results %}
+        {% for item in results %}
+        <div class="col-sm-3">&nbsp;</div>
+        <div class="col-sm-6">
+          <strong>{{item}}</strong>
+        </div>
+        <div class="col-sm-3">&nbsp;</div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    
+{% endautoescape %}
+  
+{% endblock %}  
+{% endblock %}  
+

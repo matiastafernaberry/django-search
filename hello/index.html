@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <script>
+  	$.ajax({
+	    type:"POST", 
+	    url:"http://127.0.0.1:8000/keywordextract/", 
+	    data:{data:"Cabalgata y juegos de toro en Atalaya"}, 
+	    success:function(datos){ 
+	        console.log(datos.promedio);
+	    }
+	})
+  </script>
+</body>
+</html>

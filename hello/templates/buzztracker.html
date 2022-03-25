@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+{% block body %}
+  <!-- Page Content -->
+  {% autoescape on %}
+  <div class="container">
+      <div class="row description">
+        <div class="col-sm-3">&nbsp;</div>
+        <div class="col-sm-6 buzztracker">
+          Suba un archivo csv con los siguientes campos obligatorios: Date, URL, Hit Sentence, 
+          Source, Influencer, Twitter Screen Name,  User Profile Url, Twitter Bio, Twitter Followers, Twitter Followers.<br><br>
+          Separado por tabuladores.
+          <p>&nbsp;</p>
+        </div>
+        <div class="col-sm-3">&nbsp;</div>
+      </div>
+  </div>
+  <div>
+    <div id="main" class="site-main">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">&nbsp;</div>
+          <div class="formulario col-sm-6">
+            <form action="/buzztracker/" method="post" id="remember" enctype="multipart/form-data">
+              <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+              <div class="form-group">
+                <input type="file" id="myfile" name="myfile">
+              </div>
+              <div class="form-group">
+                <p>Nombre del archivo:</p>
+                <input type="text" id="mytext" name="mytext">
+              </div>
+              <div class="form-group">
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+          </form>
+        </div>
+        <div class="col-sm-3">&nbsp;</div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            {% if error %}
+                <div id="navigation" style="color:red">
+                  {{ error }}
+                </div>
+            {% endif %}
+            </p>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            
+            {% for item in files %}
+                <div id="navigation">
+                  <a href="{{ item }}">{{ item }}</a>
+                </div>
+            {% endfor %}
+            </p>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+    </div>
+  
+  
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-2">&nbsp;</div>
+        <div class="col-sm-8 comentarios">
+          {{ mensaje }} 
+        </div>
+        <div class="col-sm-2">&nbsp;</div>
+      </div>
+    </div>
+{% endautoescape %}
+  
+{% endblock %}  
+{% endblock %}  
+
