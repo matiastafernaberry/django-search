@@ -146,32 +146,41 @@ class NuevaBusquedaClass(View):
 		busqueda = self.request.POST['busqueda']
 		tipobusqueda = self.request.POST['tipobusqueda']
 		paises = self.request.POST['paises']
-		print(" ")
-		print(proyecto)
-		print(busqueda)
-		print(tipobusqueda)
-		print(paises)
+
+		if not paises: paises = "com"
 		USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
 		headers = {"user-agent" : USER_AGENT}
 		query = busqueda.replace(' ', '+')
-		URL = f"https://google.com/search?q={query}&num=20"
+		if tipobusqueda == "busqueda":
+			URL = f"https://google.{paises}/search?q={query}&num=20"
+		if tipobusqueda == "imagen":
+			URL = f"https://images.google.{paises}/search?q={query}&num=20"
+		if tipobusqueda == "video":
+			URL = f"https://www.google.{paises}/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=20"
+
 		resp = requests.get(URL, headers=headers)
 		soup = BeautifulSoup(resp.text, "html.parser")
 		f = open("google.txt", "wb")
-		f.write(soup.prettify().encode('cp1252', errors='ignore') )
+		f.write(soup.prettify().encode('cp1252', errors='ignore'))
 		f.close()
 		if resp.status_code == 200:
 			soup = BeautifulSoup(resp.content, "html.parser")
 			results = []
 			for g in soup.find_all('div', class_='g'):
 				anchors = g.find_all('a')
-				
+				for data in g.find_all('span'):
+					description = data.get_text()
+				for data in g.find_all('h3'):
+					title_search = data.get_text()
 				if anchors:
 					print(" ")
+					#title_search = anchors.find('h3')
+					print(description)
 					try: 
 						print(anchors[0]['href'])
 						link = anchors[0]['href']
-						results.append(link)
+						d = {"title": title_search,"url":link,"description":description}
+						results.append(d)
 					except: 
 						print(" error ")
 						print(anchors[0])
@@ -181,7 +190,6 @@ class NuevaBusquedaClass(View):
 		for x in f:
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
-
 
 		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises})
 

@@ -31,10 +31,7 @@ img{
 img:hover{
   transform: skewY(0deg);
 }
-a{
-  color: #000;
-  
-}
+
 .container{
   margin-top: 2rem;
 }
@@ -43,6 +40,16 @@ a{
 }
 .title-busqueda{
   padding-bottom: 3rem;
+}
+.resultado-busqueda{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.items-search{
+  padding-top: 3rem;
+}
+.link-url{
+  color: #007bff;
 }
 .logo{
   font-family: 'Dosis', cursive;

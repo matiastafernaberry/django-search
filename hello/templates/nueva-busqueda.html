@@ -5,7 +5,7 @@
   {% autoescape on %}
   <div>
     <div id="main" class="site-main">
-      <div class="container">
+      <div class="container" style="margin-top:0">
         <div class="row">
           <div class="col-sm-3">&nbsp;</div>
           <div class="col-sm-6 title-busqueda">
@@ -51,7 +51,7 @@
                 <label for="exampleInputPassword1">Pais</label>
                 {% if lista_paises %}
                   <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="paises">
-                    <option selected>Choose...</option>
+                    <option selected value="">Choose...</option>
                     {% for key, value in lista_paises.items %}  
                       <option value="{{value}}">{{key}}</option>
                     {% endfor %}
@@ -64,17 +64,41 @@
         </div>
         <div class="col-sm-3">&nbsp;</div>
       </div>
-      <div class="row">
+      <hr>
         {% if results %}
-        {% for item in results %}
-        <div class="col-sm-3">&nbsp;</div>
-        <div class="col-sm-6">
-          <strong>{{item}}</strong>
+        <div class="row resultado-busqueda">
+          <div class="col-sm-10"><h3>Contenido</h3></div>
+          <div class="col-sm-2"><h3>Evalución</h3></div>
         </div>
-        <div class="col-sm-3">&nbsp;</div>
-        {% endfor %}
+        
+          {% for item in results %}
+            <div class="items-search">
+              <div class="row">
+                <div class="col-sm-10">
+                  {{item.url}}
+                </div>
+                <div class="col-sm-2">&nbsp;</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-10">
+                  <h5 class="link-url"><a href="{{item.url}}">{{item.title}}</a></h5>
+                </div>
+                <div class="col-sm-2">&nbsp;</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-10">
+                  <span>{{item.description}}</span>
+                </div>
+                <div class="col-sm-2"><button type="button" class="btn btn-warning">Sin evaluar</button></div>
+              </div>
+            </div>
+          {% endfor %}
         {% endif %}
-      </div>
+        <div class="row resultado-busqueda">
+          <div class="col-sm-10">&nbsp;</div>
+          <div class="col-sm-2">&nbsp;</div>
+        </div>
+      
     </div>
     
 {% endautoescape %}
