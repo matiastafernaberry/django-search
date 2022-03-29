@@ -38,6 +38,7 @@ from os.path import isfile, join
 
 #from .models import Greeting
 from django.conf import settings
+from .forms import BusquedaForm
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -133,14 +134,16 @@ class NuevaBusquedaClass(View):
 	"""docstring for MainClass"""
 	def get(self, request):
 		f = open("paises.yml", "r")
+		form = BusquedaForm()
 		lista_paises = {}
 		for x in f:
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
 
-		return TemplateResponse(request, 'nueva-busqueda.html', {'lista_paises': lista_paises})
+		return TemplateResponse(request, 'nueva-busqueda.html', {'lista_paises': lista_paises, 'form': form})
 
 	def post(self, request):
+		form = BusquedaForm()
 		dataPost = request.body.decode('utf-8')
 		proyecto = self.request.POST['proyecto']
 		busqueda = self.request.POST['busqueda']
@@ -184,13 +187,14 @@ class NuevaBusquedaClass(View):
 					except: 
 						print(" error ")
 						print(anchors[0])
-
+		form_post = BusquedaForm(request.POST)
+		form_post.save()
 		f = open("paises.yml", "r")
 		lista_paises = {}
 		for x in f:
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
 
-		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises})
+		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises, 'form': form})
 
 
