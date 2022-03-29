@@ -158,11 +158,12 @@ class NuevaBusquedaClass(View):
 		headers = {"user-agent" : USER_AGENT}
 		query = busqueda.replace(' ', '+')
 		if tipobusqueda == "busqueda":
-			URL = f"https://google.{paises}/search?q={query}&num=20"
+			URL = f"https://google.com/search?q={query}&num=20&lr=lang_es&cr=country{paises}" #&lr=lang_es
+			print(URL)
 		if tipobusqueda == "imagen":
-			URL = f"https://images.google.{paises}/search?q={query}&num=20"
+			URL = f"https://images.google.com/search?q={query}&num=20"
 		if tipobusqueda == "video":
-			URL = f"https://www.google.{paises}/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=20"
+			URL = f"https://www.google.com/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=20&cr=country{paises}"
 
 		resp = requests.get(URL, headers=headers)
 		soup = BeautifulSoup(resp.text, "html.parser")
@@ -179,11 +180,9 @@ class NuevaBusquedaClass(View):
 				for data in g.find_all('h3'):
 					title_search = data.get_text()
 				if anchors:
-					print(" ")
 					#title_search = anchors.find('h3')
-					print(description)
 					try: 
-						print(anchors[0]['href'])
+						#print(anchors[0]['href'])
 						link = anchors[0]['href']
 						d = {"title": title_search,"url":link,"description":description}
 						results.append(d)
