@@ -40,6 +40,8 @@ from os.path import isfile, join
 from django.conf import settings
 from .forms import BusquedaForm
 
+from hello.models import Busqueda
+
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__).replace("views","")),
@@ -114,7 +116,8 @@ class BuzzTrackerClass(View):
 class FileClass(View):
 	"""docstring for MainClass"""
 	def get(self, request):
-		return TemplateResponse(request, 'files.html', {'files': ''})
+		datos = Busqueda.objects.all()
+		return TemplateResponse(request, 'files.html', {'files': '','datos': datos})
 
 	def post(self, request):
 		dataPost = request.body.decode('utf-8')

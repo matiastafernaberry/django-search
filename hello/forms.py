@@ -7,6 +7,7 @@ class BusquedaForm(forms.ModelForm):
     busqueda = forms.CharField(max_length=100, help_text='100 characters max.', required=False)
     pais = forms.CharField(max_length=100, help_text='100 characters max.', required=False)
     evaluacion = forms.CharField(max_length=100, help_text='100 characters max.', required=False)
+    url = forms.CharField(max_length=100, help_text='100 characters max.', required=False)
     class Meta:
         model = Busqueda
         exclude = ()
