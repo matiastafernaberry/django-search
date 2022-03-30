@@ -152,13 +152,23 @@ class NuevaBusquedaClass(View):
 		busqueda = self.request.POST['busqueda']
 		tipobusqueda = self.request.POST['tipobusqueda']
 		paises = self.request.POST['paises']
+		paisesUpper = paises.upper()
 
 		if not paises: paises = "com"
 		USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
 		headers = {"user-agent" : USER_AGENT}
 		query = busqueda.replace(' ', '+')
 		if tipobusqueda == "busqueda":
-			URL = f"https://google.com/search?q={query}&num=20&lr=lang_es&cr=country{paises}" #&lr=lang_es
+			
+			#https://www.google.com.pa/search?q=guillermo+liberman+panama&oq=guillermo+liberman+panama&uule=w+CAIQICINUGFuYW1hLFBhbmFtYQ&hl=es&gl=pa&sourceid=chrome&ie=UTF-8
+			#https://www.google.com/search?q=guillermo+liberman+panama&sxsrf=APq-WBvGXackTIj_DHQuRa2uxUgsi-4NrQ:1648661270855&source=hp&ei=FpNEYum0Mair1sQP4oq6mAo&iflsig=AHkkrS4AAAAAYkShJrKtZ1sEr6JMBz_8txCIItTx4QMo&oq=guillermo+liberman+pana&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQ6BgizARCFBDoFCC4QgAQ6BggAEBYQHlCDfVj5kQFgvaEBaAFwAHgAgAGvAYgBkAeSAQMwLjaYAQCgAQKgAQGwAQE&sclient=gws-wiz
+			#https://www.google.com/search?q=guillermo+liberman+panama&source=hp&ei=NZVEYvufH82Q1sQP38O66Ac&iflsig=AHkkrS4AAAAAYkSjRSEmYo6frwLzCxPbT39V1HhadYSo&ved=0ahUKEwi7jv_tr-72AhVNiJUCHd-hDn0Q4dUDCAY&uact=5&oq=guillermo+liberman+panama&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEUABYAGCoCGgAcAB4AIABWYgBWZIBATGYAQCgAQKgAQE&sclient=gws-wiz
+			print(paises)
+			if paises != "com":
+				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+			else:
+				URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+			#URL = f"https://google.com/search?q={query}&oq={query}&num=20hl=es&gl={paises}&cr=country{paisesUpper}&ie=UTF-8" #&lr=lang_es
 			print(URL)
 		if tipobusqueda == "imagen":
 			URL = f"https://images.google.com/search?q={query}&num=20"
@@ -184,6 +194,7 @@ class NuevaBusquedaClass(View):
 					try: 
 						#print(anchors[0]['href'])
 						link = anchors[0]['href']
+						print(link)
 						d = {"title": title_search,"url":link,"description":description}
 						results.append(d)
 					except: 
