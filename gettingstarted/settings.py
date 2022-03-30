@@ -139,6 +139,8 @@ STATICFILES_DIRS = [
     BASE_DIR + "/static",
     "/var/www/html/django-categorization/hello/static",
     "/var/www/html/django-categorization/staticfiles",
+    "/home/ec2-user/django-search/hello/static",
+    "/home/ec2-user/django-search/staticfiles",
     
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, "/staticfiles/files")
