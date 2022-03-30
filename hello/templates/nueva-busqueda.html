@@ -121,7 +121,7 @@
           {% endfor %}
         <div class="row resultado-busqueda">
           <div class="col-sm-12 text-center">
-            <button type="submit" class="btn btn-primary guardar-evaluciones">Guardar Evaluciónes</button>
+            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">Guardar Evaluciónes</button>
           </div>
         </div>
         {% endif %}
@@ -145,27 +145,47 @@
   }
   function saveEvalucaion() {
     var radios = document.getElementsByTagName('input');
+    var lista = [];
     for (i = 0; i < radios.length; i++) {
         if (radios[i].type == 'radio' && radios[i].checked) {
             console.log(radios[i].name);
             console.log($("#div-url-"+radios[i].name).attr("data"));
-            console.log($("#id_proyecto").val());
-            console.log($("#id_busqueda").val()); //id_proyecto
+            if (radios[i].name !== "tipobusqueda"){
+              var datos = {};
+              datos["url"] = $("#div-url-"+radios[i].name).attr("data");
+              datos["evalucion"] = radios[i].value;
+              lista.push(datos);
+            }
         }
     }
+    
+    var datosBusqueda = {};
+    datosBusqueda["proyecto"] = $("#id_proyecto").val();
+    datosBusqueda["busqueda"] = $("#id_busqueda").val();
+
+    //console.log(lista);
+    //console.log(datosBusqueda);
+
     $.ajax({
         type: "POST",
-        url: "/",
-        data: JSON.stringify({ "userName": userName, "password" : password }),
-        success: function() { 
-          console.log();
+        url: "guardar-busqueda/",
+        data: JSON.stringify({ "busqueda": JSON.stringify(datosBusqueda), "datos" : JSON.stringify(lista) }),
+        success: function(data) { 
+          console.log(data);
+          
+            window.location.replace("/");
+          
         },
         dataType: "text",
         contentType : "text/plain"
     });
+    
     //div-url- get atribute data and the radio buttons checket
     //$("#div-url-0").attr("data");
   }
+  $("#guardar-evaluaciones").click(function() {
+    saveEvalucaion();
+  });
   //saveEvalucaion();
   </script>
 {% endblock %}  

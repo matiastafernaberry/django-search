@@ -12,5 +12,5 @@ class ResultadoBusqueda(models.Model):
     when = models.DateTimeField("date created", auto_now_add=True)
     fecha_modificacion = models.DateTimeField("fecha modificacion", auto_now_add=True)
     busqueda = models.ForeignKey(Busqueda, on_delete=models.CASCADE)
-    url = models.CharField(max_length=100)
+    url = models.CharField(max_length=500)
     evaluacion = models.CharField(max_length=100)

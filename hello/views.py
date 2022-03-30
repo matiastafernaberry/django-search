@@ -40,7 +40,7 @@ from os.path import isfile, join
 from django.conf import settings
 from .forms import BusquedaForm
 
-from hello.models import Busqueda
+from hello.models import Busqueda, ResultadoBusqueda
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -205,7 +205,25 @@ class GuardarResultadosBusquedaClass(View):
 	def post(self, request):
 		body_unicode = request.body.decode('utf-8')
 		body = json.loads(body_unicode) 
-		content = body['content']
+		
+		
+		print(body["busqueda"])
+		print(body["datos"])
+		busqueda = json.loads(body["busqueda"]) 
+		datos = json.loads(body["datos"]) 
+		print(datos[0])
+
+		b2 = Busqueda(proyecto=busqueda["proyecto"], busqueda=busqueda["busqueda"])
+		b2.save()
+		print(b2.id)
+		for i in datos:
+			b3 = ResultadoBusqueda(
+				url = i["url"], 
+				evaluacion = i["evalucion"],
+				busqueda = Busqueda.objects.get(id=b2.id)
+			)
+			b3.save()
+			print(b3.id)
 
 		
 		#form_post = BusquedaForm(request.POST)
@@ -216,6 +234,12 @@ class GuardarResultadosBusquedaClass(View):
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
 
-		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises, 'form': form})
+		dataResponse = {
+			'status': "success",
+			'code': 200,
+		}
+		dataResponse = json.dumps(dataResponse)
+		#print(dataResponse)
+		return HttpResponse(dataResponse, content_type='application/json')
 
 
