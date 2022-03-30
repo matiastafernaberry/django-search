@@ -197,7 +197,13 @@ class NuevaBusquedaClass(View):
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
 
-		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises, 'form': form})
+		return TemplateResponse(request, 'nueva-busqueda.html', {
+			'results': results, 
+			'lista_paises': lista_paises, 
+			'form': form,
+			'proyecto': proyecto,
+			'busqueda': busqueda
+		})
 
 
 class GuardarResultadosBusquedaClass(View):
