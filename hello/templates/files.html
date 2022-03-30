@@ -13,30 +13,32 @@
           </div>
           <div class="col-sm-3"></div>
         </div>
-        {% for item in datos %}
-            <div class="items-search">
-              <div class="row">
-                <div class="col-sm-2">
-                  {{item.proyecto}}
-                </div>
-                <div class="col-sm-2">
-                  {{item.busqueda}}
-                </div>
-                <div class="col-sm-2">
-                  {{item.pais}}
-                </div>
-                <div class="col-sm-2">
-                  {{item.url}}
-                </div>
-                <div class="col-sm-2">
-                  {{item.evaluacion}}
-                </div>
-                <div class="col-sm-2">
-                  {{item.evaluacion}}
-                </div>
-              </div>
-            </div>
-          {% endfor %}
+       
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Proyecto</th>
+              <th scope="col">Busqueda</th>
+              <th scope="col">Pais</th>
+              <th scope="col">Fecha creación</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in datos %}
+            <tr>
+              <td>{{item.id}}</td>
+              <td>{{item.proyecto}}</td>
+              <td>{{item.busqueda}}</td>
+              <td>{{item.pais}}</td>
+              <td>{{item.when}}</td>
+              
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+            
+          
     </div>
   
 
