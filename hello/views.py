@@ -200,3 +200,22 @@ class NuevaBusquedaClass(View):
 		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises, 'form': form})
 
 
+class GuardarResultadosBusquedaClass(View):
+	"""docstring for MainClass"""
+	def post(self, request):
+		body_unicode = request.body.decode('utf-8')
+		body = json.loads(body_unicode) 
+		content = body['content']
+
+		
+		#form_post = BusquedaForm(request.POST)
+		#form_post.save()
+		f = open("paises.yml", "r")
+		lista_paises = {}
+		for x in f:
+			pais = x.split()
+			lista_paises[pais[0]] = pais[1].lower()
+
+		return TemplateResponse(request, 'nueva-busqueda.html', {'results': results, 'lista_paises': lista_paises, 'form': form})
+
+

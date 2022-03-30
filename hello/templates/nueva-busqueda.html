@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-sm-3">&nbsp;</div>
           <div class="col-sm-6 title-busqueda">
-            <h3>Configuración nueva búsqueda</h3>
+            <h3>Configurar nueva búsqueda</h3>
           </div>
           <div class="col-sm-3">&nbsp;</div>
         </div>
@@ -74,7 +74,7 @@
           {% for item in results %}
             <div class="items-search">
               <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-10" id="div-url-{{ forloop.counter0 }}" data="{{item.url}}">
                   {{item.url}}
                 </div>
                 <div class="col-sm-2">&nbsp;</div>
@@ -91,21 +91,20 @@
                 </div>
                 <div class="col-sm-1"> 
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input radiob-black" type="radio" name="inlineRadioOptions{{ forloop.counter0 }}" id="inlineRadio1{{ forloop.counter0 }}" value="option1{{ forloop.counter0 }}">
+                    <input class="form-check-input radiob-black" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio1{{ forloop.counter0 }}" value="sinevaluar">
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input radiob-green" type="radio" name="inlineRadioOptions{{ forloop.counter0 }}" id="inlineRadio2{{ forloop.counter0 }}" value="option2{{ forloop.counter0 }}">
+                    <input class="form-check-input radiob-green" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio2{{ forloop.counter0 }}" value="favorable">
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input radiob-gray" type="radio" name="inlineRadioOptions{{ forloop.counter0 }}" id="inlineRadio3{{ forloop.counter0 }}" value="option3{{ forloop.counter0 }}">
+                    <input class="form-check-input radiob-gray" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio3{{ forloop.counter0 }}" value="neutral">
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input radiob-red" type="radio" name="inlineRadioOptions{{ forloop.counter0 }}" id="inlineRadio4{{ forloop.counter0 }}" value="option4{{ forloop.counter0 }}">
+                    <input class="form-check-input radiob-red" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio4{{ forloop.counter0 }}" value="desfavorable">
                   </div>
                 </div>
               </div>
             </div>
-            
             <!-- The Modal -->
             <div id="{{ forloop.counter0 }}" class="modal">
               <!-- Modal content -->
@@ -120,12 +119,12 @@
               </form>
             </div>
           {% endfor %}
-        {% endif %}
         <div class="row resultado-busqueda">
           <div class="col-sm-12 text-center">
             <button type="submit" class="btn btn-primary guardar-evaluciones">Guardar Evaluciónes</button>
           </div>
         </div>
+        {% endif %}
         <div class="row resultado-busqueda">
           <div class="col-sm-10">&nbsp;</div>
           <div class="col-sm-2">&nbsp;</div>
@@ -144,6 +143,30 @@
     var modal = document.getElementById(id);
     modal.style.display = "none";
   }
+  function saveEvalucaion() {
+    var radios = document.getElementsByTagName('input');
+    for (i = 0; i < radios.length; i++) {
+        if (radios[i].type == 'radio' && radios[i].checked) {
+            console.log(radios[i].name);
+            console.log($("#div-url-"+radios[i].name).attr("data"));
+            console.log($("#id_proyecto").val());
+            console.log($("#id_busqueda").val()); //id_proyecto
+        }
+    }
+    $.ajax({
+        type: "POST",
+        url: "/",
+        data: JSON.stringify({ "userName": userName, "password" : password }),
+        success: function() { 
+          console.log();
+        },
+        dataType: "text",
+        contentType : "text/plain"
+    });
+    //div-url- get atribute data and the radio buttons checket
+    //$("#div-url-0").attr("data");
+  }
+  //saveEvalucaion();
   </script>
 {% endblock %}  
 {% endblock %}  
