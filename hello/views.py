@@ -189,8 +189,8 @@ class NuevaBusquedaClass(View):
 					except: 
 						print(" error ")
 						print(anchors[0])
-		form_post = BusquedaForm(request.POST)
-		form_post.save()
+		#form_post = BusquedaForm(request.POST)
+		#form_post.save()
 		f = open("paises.yml", "r")
 		lista_paises = {}
 		for x in f:
