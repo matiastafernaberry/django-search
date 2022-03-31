@@ -26,7 +26,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ec2-35-160-166-204.us-west-2.compute.amazonaws.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["ec2-54-148-140-54.us-west-2.compute.amazonaws.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
