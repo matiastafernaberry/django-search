@@ -68,6 +68,9 @@
                 {% endif %}
               </div>
               <button type="submit" class="btn btn-primary">Búsqueda</button>
+              {% for item in datos_busqueda %}
+                {{ item.busqueda }}
+              {% endfor %}
             </form>
         </div>
         <div class="col-sm-3">&nbsp;</div>

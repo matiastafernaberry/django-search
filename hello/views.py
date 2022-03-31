@@ -159,7 +159,6 @@ class NuevaBusquedaClass(View):
 		headers = {"user-agent" : USER_AGENT}
 		query = busqueda.replace(' ', '+')
 		if tipobusqueda == "busqueda":
-			
 			#https://www.google.com.pa/search?q=guillermo+liberman+panama&oq=guillermo+liberman+panama&uule=w+CAIQICINUGFuYW1hLFBhbmFtYQ&hl=es&gl=pa&sourceid=chrome&ie=UTF-8
 			#https://www.google.com/search?q=guillermo+liberman+panama&sxsrf=APq-WBvGXackTIj_DHQuRa2uxUgsi-4NrQ:1648661270855&source=hp&ei=FpNEYum0Mair1sQP4oq6mAo&iflsig=AHkkrS4AAAAAYkShJrKtZ1sEr6JMBz_8txCIItTx4QMo&oq=guillermo+liberman+pana&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQ6BgizARCFBDoFCC4QgAQ6BggAEBYQHlCDfVj5kQFgvaEBaAFwAHgAgAGvAYgBkAeSAQMwLjaYAQCgAQKgAQGwAQE&sclient=gws-wiz
 			#https://www.google.com/search?q=guillermo+liberman+panama&source=hp&ei=NZVEYvufH82Q1sQP38O66Ac&iflsig=AHkkrS4AAAAAYkSjRSEmYo6frwLzCxPbT39V1HhadYSo&ved=0ahUKEwi7jv_tr-72AhVNiJUCHd-hDn0Q4dUDCAY&uact=5&oq=guillermo+liberman+panama&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEUABYAGCoCGgAcAB4AIABWYgBWZIBATGYAQCgAQKgAQE&sclient=gws-wiz
@@ -192,28 +191,43 @@ class NuevaBusquedaClass(View):
 				if anchors:
 					#title_search = anchors.find('h3')
 					try: 
+						print(" ")
 						#print(anchors[0]['href'])
 						link = anchors[0]['href']
-						print(link)
-						d = {"title": title_search,"url":link,"description":description}
-						results.append(d)
+						if link.startswith("http"):
+							print(link)
+							d = {"title": title_search,"url":link,"description":description}
+							results.append(d)
 					except: 
-						print(" error ")
+						print("line 201 error ")
 						print(anchors[0])
-		#form_post = BusquedaForm(request.POST)
-		#form_post.save()
+		
 		f = open("paises.yml", "r")
 		lista_paises = {}
 		for x in f:
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
 
+		try:
+			datos_busqueda = Busqueda.objects.filter(busqueda__exact = busqueda)
+			#if datos_busqueda.count() > 0:
+			#	datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
+			#datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
+			#print(datos_resultado_busqueda.count())
+		except: 
+			print("error")
+			print(traceback.format_exc())
+			datos_busqueda = ""
+		
+		
+
 		return TemplateResponse(request, 'nueva-busqueda.html', {
 			'results': results, 
 			'lista_paises': lista_paises, 
 			'form': form,
 			'proyecto': proyecto,
-			'busqueda': busqueda
+			'busqueda': busqueda,
+			'datos_busqueda': datos_busqueda
 		})
 
 
