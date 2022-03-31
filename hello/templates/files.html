@@ -3,7 +3,6 @@
 {% block body %}
   <!-- Page Content -->
   {% autoescape on %}
-  
   <div>
     <div class="container">
         <div class="row">
@@ -13,7 +12,6 @@
           </div>
           <div class="col-sm-3"></div>
         </div>
-       
         <table class="table">
           <thead>
             <tr>
@@ -32,18 +30,12 @@
               <td>{{item.busqueda}}</td>
               <td>{{item.pais}}</td>
               <td>{{item.when}}</td>
-              
             </tr>
             {% endfor %}
           </tbody>
         </table>
-            
-          
     </div>
-  
-
 {% endautoescape %}
-  
 {% endblock %}  
 {% endblock %}  
 

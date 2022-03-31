@@ -26,7 +26,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ec2-54-148-140-54.us-west-2.compute.amazonaws.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["ec2-35-160-166-204.us-west-2.compute.amazonaws.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -92,16 +92,24 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE" : "django.db.backends.postgresql_psycopg2",
+        "ENGINE" : "django.db.backends.mysql",
         "NAME": "indice",
-        "USER":"seo",
-        "PASSWORD":"B33b33s2021!",
+        "USER":"root",
+        "PASSWORD":"1234",
         "HOST":"localhost",
-        "PORT":"5432",
+        "PORT":"3306",
     }
 }
-
-
+#DATABASES = {
+#    "default": {
+#        "ENGINE" : "django.db.backends.postgresql_psycopg2",
+#        "NAME": "indice",
+#        "USER":"seo",
+#        "PASSWORD":"B33b33s2021!",
+#        "HOST":"localhost",
+#        "PORT":"5432",
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -139,8 +147,6 @@ STATICFILES_DIRS = [
     BASE_DIR + "/static",
     "/var/www/html/django-categorization/hello/static",
     "/var/www/html/django-categorization/staticfiles",
-    "/home/ec2-user/django-search/hello/static",
-    "/home/ec2-user/django-search/staticfiles",
     
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, "/staticfiles/files")
