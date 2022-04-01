@@ -162,13 +162,13 @@ class NuevaBusquedaClass(View):
 			#https://www.google.com.pa/search?q=guillermo+liberman+panama&oq=guillermo+liberman+panama&uule=w+CAIQICINUGFuYW1hLFBhbmFtYQ&hl=es&gl=pa&sourceid=chrome&ie=UTF-8
 			#https://www.google.com/search?q=guillermo+liberman+panama&sxsrf=APq-WBvGXackTIj_DHQuRa2uxUgsi-4NrQ:1648661270855&source=hp&ei=FpNEYum0Mair1sQP4oq6mAo&iflsig=AHkkrS4AAAAAYkShJrKtZ1sEr6JMBz_8txCIItTx4QMo&oq=guillermo+liberman+pana&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQ6BgizARCFBDoFCC4QgAQ6BggAEBYQHlCDfVj5kQFgvaEBaAFwAHgAgAGvAYgBkAeSAQMwLjaYAQCgAQKgAQGwAQE&sclient=gws-wiz
 			#https://www.google.com/search?q=guillermo+liberman+panama&source=hp&ei=NZVEYvufH82Q1sQP38O66Ac&iflsig=AHkkrS4AAAAAYkSjRSEmYo6frwLzCxPbT39V1HhadYSo&ved=0ahUKEwi7jv_tr-72AhVNiJUCHd-hDn0Q4dUDCAY&uact=5&oq=guillermo+liberman+panama&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEUABYAGCoCGgAcAB4AIABWYgBWZIBATGYAQCgAQKgAQE&sclient=gws-wiz
-			print(paises)
+			#print(paises)
 			if paises != "com":
 				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			else:
 				URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			#URL = f"https://google.com/search?q={query}&oq={query}&num=20hl=es&gl={paises}&cr=country{paisesUpper}&ie=UTF-8" #&lr=lang_es
-			print(URL)
+			#print(URL)
 		if tipobusqueda == "imagen":
 			URL = f"https://images.google.com/search?q={query}&num=20"
 		if tipobusqueda == "video":
@@ -182,7 +182,11 @@ class NuevaBusquedaClass(View):
 		if resp.status_code == 200:
 			soup = BeautifulSoup(resp.content, "html.parser")
 			results = []
+			lista_url = []
 			for g in soup.find_all('div', class_='g'):
+				#another_page = g.find_all('div', class_='g')
+				#print("nother page")
+				#print(g)
 				anchors = g.find_all('a')
 				for data in g.find_all('span'):
 					description = data.get_text()
@@ -190,19 +194,35 @@ class NuevaBusquedaClass(View):
 					title_search = data.get_text()
 				if anchors:
 					#title_search = anchors.find('h3')
-					try: 
-						print(" ")
-						#print(anchors[0]['href'])
+					try:
+						#print(anchors)
 						link = anchors[0]['href']
-						if link.startswith("http"):
-							print(link)
-							d = {"title": title_search,"url":link,"description":description}
-							results.append(d)
+						for i in anchors:
+							print(" ")
+							if "https://webcache" not in i['href']:
+								if i['href'].startswith("http"):
+									if "https://translate" not in i['href']:
+										print(i)	
+										print(i['href'])
+										for data in i.find_all('span'):
+											description = data.get_text()	
+										for data in i.find_all('h3'):
+											title_search = data.get_text()
+										print(i.get_text())	
+										description = i.get_text()
+										d = {"title": title_search,"url":i['href'],"description":description}
+										results.append(d)
+						#if True: #link.startswith("http"):
+						#	#print(link)
+						#	if link not in lista_url:
+						#		lista_url.append(link)
+						#		d = {"title": title_search,"url":link,"description":description}
+						#		results.append(d)
 					except: 
 						print("line 201 error ")
-						print(anchors[0])
+						print(traceback.format_exc())
 		
-		f = open("paises.yml", "r")
+		f = open("paisesdos.yml", "r")
 		lista_paises = {}
 		for x in f:
 			pais = x.split()
