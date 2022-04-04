@@ -199,19 +199,45 @@ class NuevaBusquedaClass(View):
 						link = anchors[0]['href']
 						for i in anchors:
 							print(" ")
-							if "https://webcache" not in i['href']:
-								if i['href'].startswith("http"):
-									if "https://translate" not in i['href']:
-										print(i)	
-										print(i['href'])
-										for data in i.find_all('span'):
-											description = data.get_text()	
-										for data in i.find_all('h3'):
-											title_search = data.get_text()
-										print(i.get_text())	
-										description = i.get_text()
-										d = {"title": title_search,"url":i['href'],"description":description}
-										results.append(d)
+							#print(type(i))
+							#d = i.find_all(class_='LC20lb') 
+							#d = i.find_all(attrs={"class" : "LC20lb"})
+							att = dict(i.attrs)
+							#print(" att ")
+							#print(i)
+							if i.h3:
+								if i['href'] not in lista_url:
+									#print(i)
+									print(i.h3.get_text())
+									description = i.h3.get_text()
+									for data in i.find_all('span'):
+										description = data.get_text()
+									for data in i.find_all('h3'):
+										title_search = data.get_text()
+									d = {"title": title_search,"url":i['href'],"description":""}
+									results.append(d)
+									lista_url.append(i['href'])
+							try:
+								if i.h3['class'][0] == "LC20lb":
+									print(i['href'])
+							except: pass
+
+							# if "https://webcache" not in i['href']:
+							# 	if i['href'].startswith("http"):
+							# 		if "https://translate" not in i['href']:
+							# 			#print(i)	
+							# 			#print(i['href'])
+							# 			#print(att.__contains__('class'))
+							# 			#if att.__contains__('class'):
+							# 				#print(att['class'][0])
+							# 			for data in i.find_all('span'):
+							# 				description = data.get_text()	
+							# 			for data in i.find_all('h3'):
+							# 				title_search = data.get_text()
+							# 			#print(i.get_text())	
+							# 			description = i.get_text()
+							# 			d = {"title": title_search,"url":i['href'],"description":description}
+							# 			results.append(d)
 						#if True: #link.startswith("http"):
 						#	#print(link)
 						#	if link not in lista_url:

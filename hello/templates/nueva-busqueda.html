@@ -19,7 +19,9 @@
             <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputEmail1">Proyecto</label>
-                
+                <input type="hidden" name="pais" maxlength="100" required="" id="id_pais_hidden" class="form-control" value="{{pais}}">
+
+
                 {% if proyecto %}
                   <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control" value="{{proyecto}}">
                 {% else %}
