@@ -18,6 +18,5 @@ urlpatterns = [
     path("guardar-busqueda/", csrf_exempt(GuardarResultadosBusquedaClass.as_view())),
     path("bg-documents-sharedcount/", csrf_exempt(ApiGetDocumentsSharedCount7Class.as_view())),
     path("bg-documents-7-days-all-by-client/", csrf_exempt(ApiGetBGDocuments7AllByClient.as_view())),
-    path("buzztracker/", csrf_exempt(BuzzTrackerClass.as_view())),
     path("admin/", admin.site.urls),
 ]

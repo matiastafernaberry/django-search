@@ -20,8 +20,6 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Proyecto</label>
                 <input type="hidden" name="pais" maxlength="100" required="" id="id_pais_hidden" class="form-control" value="{{pais}}">
-
-
                 {% if proyecto %}
                   <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control" value="{{proyecto}}">
                 {% else %}
@@ -61,7 +59,7 @@
               <div class="form-group">
                 <label for="exampleInputPassword1">Pais</label>
                 {% if lista_paises %}
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="paises">
+                  <select class="custom-select mr-sm-2" id="id_paises" name="paises">
                     <option selected value="">Choose...</option>
                     {% for key, value in lista_paises.items %}  
                       <option value="{{value}}">{{key}}</option>
@@ -79,6 +77,8 @@
       </div>
       <hr>
         {% if results %}
+        <input id="pais_result" type="hidden" value="{{pais_post}}">
+
         <div class="row resultado-busqueda">
           <div class="col-sm-10"><h3>Contenido</h3></div>
           <div class="col-sm-2"><h3>Evalución</h3></div>
@@ -145,8 +145,14 @@
     
 {% endautoescape %}
   <script>
-  // Get the modal
-  
+  // $('#id_paises option[value=pa]').attr('selected','selected');
+  //pais_result
+  $(function() {
+    console.log('load');
+    if($('#pais_result').val()){
+      $('#id_paises option[value='+$('#pais_result').val()+']').attr('selected','selected');
+    }
+  });
   function openModal(id){
     var modal = document.getElementById(id);
     modal.style.display = "block";
@@ -160,8 +166,8 @@
     var lista = [];
     for (i = 0; i < radios.length; i++) {
         if (radios[i].type == 'radio' && radios[i].checked) {
-            console.log(radios[i].name);
-            console.log($("#div-url-"+radios[i].name).attr("data"));
+            //console.log(radios[i].name);
+            //console.log($("#div-url-"+radios[i].name).attr("data"));
             if (radios[i].name !== "tipobusqueda"){
               var datos = {};
               datos["url"] = $("#div-url-"+radios[i].name).attr("data");
@@ -174,9 +180,12 @@
     var datosBusqueda = {};
     datosBusqueda["proyecto"] = $("#id_proyecto").val();
     datosBusqueda["busqueda"] = $("#id_busqueda").val();
+    datosBusqueda["pais"] = $("#id_paises").val();
+    datosBusqueda["tipobusqueda"] = $('input[name="tipobusqueda"]:checked').val();
 
-    //console.log(lista);
-    //console.log(datosBusqueda);
+    console.log("lista");
+    console.log(lista);
+    console.log(datosBusqueda);
 
     $.ajax({
         type: "POST",
@@ -184,9 +193,7 @@
         data: JSON.stringify({ "busqueda": JSON.stringify(datosBusqueda), "datos" : JSON.stringify(lista) }),
         success: function(data) { 
           console.log(data);
-          
-            window.location.replace("/");
-          
+          window.location.replace("/");
         },
         dataType: "text",
         contentType : "text/plain"

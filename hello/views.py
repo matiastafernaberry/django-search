@@ -136,7 +136,7 @@ class FileClass(View):
 class NuevaBusquedaClass(View):
 	"""docstring for MainClass"""
 	def get(self, request):
-		f = open("paises.yml", "r")
+		f = open("paisesdos.yml", "r")
 		form = BusquedaForm()
 		lista_paises = {}
 		for x in f:
@@ -159,22 +159,20 @@ class NuevaBusquedaClass(View):
 		headers = {"user-agent" : USER_AGENT}
 		query = busqueda.replace(' ', '+')
 		if tipobusqueda == "busqueda":
-			#https://www.google.com.pa/search?q=guillermo+liberman+panama&oq=guillermo+liberman+panama&uule=w+CAIQICINUGFuYW1hLFBhbmFtYQ&hl=es&gl=pa&sourceid=chrome&ie=UTF-8
-			#https://www.google.com/search?q=guillermo+liberman+panama&sxsrf=APq-WBvGXackTIj_DHQuRa2uxUgsi-4NrQ:1648661270855&source=hp&ei=FpNEYum0Mair1sQP4oq6mAo&iflsig=AHkkrS4AAAAAYkShJrKtZ1sEr6JMBz_8txCIItTx4QMo&oq=guillermo+liberman+pana&gs_lcp=Cgdnd3Mtd2l6EAMYADIFCAAQgAQ6BgizARCFBDoFCC4QgAQ6BggAEBYQHlCDfVj5kQFgvaEBaAFwAHgAgAGvAYgBkAeSAQMwLjaYAQCgAQKgAQGwAQE&sclient=gws-wiz
-			#https://www.google.com/search?q=guillermo+liberman+panama&source=hp&ei=NZVEYvufH82Q1sQP38O66Ac&iflsig=AHkkrS4AAAAAYkSjRSEmYo6frwLzCxPbT39V1HhadYSo&ved=0ahUKEwi7jv_tr-72AhVNiJUCHd-hDn0Q4dUDCAY&uact=5&oq=guillermo+liberman+panama&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEUABYAGCoCGgAcAB4AIABWYgBWZIBATGYAQCgAQKgAQE&sclient=gws-wiz
-			#print(paises)
 			if paises != "com":
 				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			else:
 				URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
-			#URL = f"https://google.com/search?q={query}&oq={query}&num=20hl=es&gl={paises}&cr=country{paisesUpper}&ie=UTF-8" #&lr=lang_es
-			#print(URL)
 		if tipobusqueda == "imagen":
 			URL = f"https://images.google.com/search?q={query}&num=20"
 		if tipobusqueda == "video":
 			URL = f"https://www.google.com/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=20&cr=country{paises}"
+		try:
+			resp = requests.get(URL, headers=headers)
+		except:
+			URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+			resp = requests.get(URL, headers=headers)
 
-		resp = requests.get(URL, headers=headers)
 		soup = BeautifulSoup(resp.text, "html.parser")
 		f = open("google.txt", "wb")
 		f.write(soup.prettify().encode('cp1252', errors='ignore'))
@@ -231,12 +229,7 @@ class NuevaBusquedaClass(View):
 							# 			#if att.__contains__('class'):
 							# 				#print(att['class'][0])
 							# 			for data in i.find_all('span'):
-							# 				description = data.get_text()	
-							# 			for data in i.find_all('h3'):
-							# 				title_search = data.get_text()
-							# 			#print(i.get_text())	
-							# 			description = i.get_text()
-							# 			d = {"title": title_search,"url":i['href'],"description":description}
+							# 	busqueda = models.CharField(max_length=100)		d = {"title": title_search,"url":i['href'],"description":description}
 							# 			results.append(d)
 						#if True: #link.startswith("http"):
 						#	#print(link)
@@ -253,9 +246,11 @@ class NuevaBusquedaClass(View):
 		for x in f:
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
-
 		try:
-			datos_busqueda = Busqueda.objects.filter(busqueda__exact = busqueda)
+			datos_busqueda = Busqueda.objects.filter(
+				busqueda__exact = busqueda,
+
+			)
 			#if datos_busqueda.count() > 0:
 			#	datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
 			#datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
@@ -270,6 +265,7 @@ class NuevaBusquedaClass(View):
 		return TemplateResponse(request, 'nueva-busqueda.html', {
 			'results': results, 
 			'lista_paises': lista_paises, 
+			'pais_post': paises,
 			'form': form,
 			'proyecto': proyecto,
 			'busqueda': busqueda,
@@ -283,14 +279,18 @@ class GuardarResultadosBusquedaClass(View):
 		body_unicode = request.body.decode('utf-8')
 		body = json.loads(body_unicode) 
 		
-		
 		print(body["busqueda"])
 		print(body["datos"])
 		busqueda = json.loads(body["busqueda"]) 
 		datos = json.loads(body["datos"]) 
 		print(datos[0])
 
-		b2 = Busqueda(proyecto=busqueda["proyecto"], busqueda=busqueda["busqueda"])
+		b2 = Busqueda(
+			proyecto = busqueda["proyecto"], 
+			busqueda = busqueda["busqueda"],
+			tipobusqueda = busqueda["tipobusqueda"],
+			pais = busqueda["pais"]
+		)
 		b2.save()
 		print(b2.id)
 		for i in datos:
