@@ -196,7 +196,7 @@ class NuevaBusquedaClass(View):
 						#print(anchors)
 						link = anchors[0]['href']
 						for i in anchors:
-							print(" ")
+							#print(" ")
 							#print(type(i))
 							#d = i.find_all(class_='LC20lb') 
 							#d = i.find_all(attrs={"class" : "LC20lb"})
@@ -206,7 +206,7 @@ class NuevaBusquedaClass(View):
 							if i.h3:
 								if i['href'] not in lista_url:
 									#print(i)
-									print(i.h3.get_text())
+									#print(i.h3.get_text())
 									description = i.h3.get_text()
 									for data in i.find_all('span'):
 										description = data.get_text()
@@ -216,27 +216,9 @@ class NuevaBusquedaClass(View):
 									results.append(d)
 									lista_url.append(i['href'])
 							try:
-								if i.h3['class'][0] == "LC20lb":
-									print(i['href'])
+								if i.h3['class'][0] == "LC20lb": pass
+									#print(i['href'])
 							except: pass
-
-							# if "https://webcache" not in i['href']:
-							# 	if i['href'].startswith("http"):
-							# 		if "https://translate" not in i['href']:
-							# 			#print(i)	
-							# 			#print(i['href'])
-							# 			#print(att.__contains__('class'))
-							# 			#if att.__contains__('class'):
-							# 				#print(att['class'][0])
-							# 			for data in i.find_all('span'):
-							# 	busqueda = models.CharField(max_length=100)		d = {"title": title_search,"url":i['href'],"description":description}
-							# 			results.append(d)
-						#if True: #link.startswith("http"):
-						#	#print(link)
-						#	if link not in lista_url:
-						#		lista_url.append(link)
-						#		d = {"title": title_search,"url":link,"description":description}
-						#		results.append(d)
 					except: 
 						print("line 201 error ")
 						print(traceback.format_exc())
@@ -247,21 +229,24 @@ class NuevaBusquedaClass(View):
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
 		try:
+			datos_resultado_busqueda = ""
 			datos_busqueda = Busqueda.objects.filter(
 				busqueda__exact = busqueda,
-
+				proyecto__exact = proyecto,
+				pais__exact = paises
 			)
-			#if datos_busqueda.count() > 0:
-			#	datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
-			#datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
-			#print(datos_resultado_busqueda.count())
+			print(" ")
+			print("datos_busqueda")
+			print(datos_busqueda.count())
+			if datos_busqueda.count() > 0:
+				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
+				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
+
 		except: 
 			print("error")
 			print(traceback.format_exc())
 			datos_busqueda = ""
 		
-		
-
 		return TemplateResponse(request, 'nueva-busqueda.html', {
 			'results': results, 
 			'lista_paises': lista_paises, 
@@ -269,7 +254,7 @@ class NuevaBusquedaClass(View):
 			'form': form,
 			'proyecto': proyecto,
 			'busqueda': busqueda,
-			'datos_busqueda': datos_busqueda
+			'datos_busqueda': datos_resultado_busqueda
 		})
 
 
@@ -279,32 +264,68 @@ class GuardarResultadosBusquedaClass(View):
 		body_unicode = request.body.decode('utf-8')
 		body = json.loads(body_unicode) 
 		
-		print(body["busqueda"])
-		print(body["datos"])
+		#print(body["busqueda"])
+		#print(body["datos"])
 		busqueda = json.loads(body["busqueda"]) 
 		datos = json.loads(body["datos"]) 
-		print(datos[0])
+		#print(datos[0])
 
-		b2 = Busqueda(
-			proyecto = busqueda["proyecto"], 
-			busqueda = busqueda["busqueda"],
-			tipobusqueda = busqueda["tipobusqueda"],
-			pais = busqueda["pais"]
+		datos_busqueda = Busqueda.objects.filter(
+			busqueda__exact = busqueda["busqueda"],
+			proyecto__exact = busqueda["proyecto"],
+			pais__exact = busqueda["pais"]
 		)
-		b2.save()
-		print(b2.id)
+		if datos_busqueda.count() == 0:
+			b2 = Busqueda(
+				proyecto = busqueda["proyecto"], 
+				busqueda = busqueda["busqueda"],
+				tipobusqueda = busqueda["tipobusqueda"],
+				pais = busqueda["pais"]
+			)
+			b2.save()
+			id_resultados = b2.id
+		else:
+			datos_busqueda = Busqueda.objects.get(
+				busqueda__exact = busqueda["busqueda"],
+				proyecto__exact = busqueda["proyecto"],
+				pais__exact = busqueda["pais"]
+			)
+			id_resultados = datos_busqueda.id
+		print(" ")
+		count = 0
 		for i in datos:
+			if count == 0: puntaje = 0.095
+			if count == 1: puntaje = 0.090
+			if count == 2: puntaje = 0.085
+			if count == 3: puntaje = 0.080
+			if count == 4: puntaje = 0.075
+			if count == 5: puntaje = 0.070
+			if count == 6: puntaje = 0.065
+			if count == 7: puntaje = 0.060
+			if count == 8: puntaje = 0.055
+			if count == 9: puntaje = 0.050
+			if count == 10: puntaje = 0.045
+			if count == 11: puntaje = 0.040
+			if count == 12: puntaje = 0.035
+			if count == 13: puntaje = 0.030
+			if count == 14: puntaje = 0.025
+			if count == 15: puntaje = 0.020
+			if count == 16: puntaje = 0.015
+			if count == 17: puntaje = 0.010
+			if count == 18: puntaje = 0.005
+			if count == 19: puntaje = 0.00095
+			if count == 20: puntaje = 0.00090
+
+			print(i["url"])
 			b3 = ResultadoBusqueda(
 				url = i["url"], 
 				evaluacion = i["evalucion"],
-				busqueda = Busqueda.objects.get(id=b2.id)
+				busqueda = Busqueda.objects.get(id=id_resultados),
+				puntaje = puntaje
 			)
 			b3.save()
-			print(b3.id)
+			count += 1
 
-		
-		#form_post = BusquedaForm(request.POST)
-		#form_post.save()
 		f = open("paises.yml", "r")
 		lista_paises = {}
 		for x in f:
@@ -316,7 +337,19 @@ class GuardarResultadosBusquedaClass(View):
 			'code': 200,
 		}
 		dataResponse = json.dumps(dataResponse)
-		#print(dataResponse)
 		return HttpResponse(dataResponse, content_type='application/json')
 
+
+
+class VerhistoricosClass(View):
+	"""docstring for MainClass"""
+	def get(self, request, id):
+		print(id)
+		datos = ResultadoBusqueda.objects.filter(busqueda__pk = id).order_by('url')
+		dataResponse = {
+			'status': "success",
+			'code': 200,
+		}
+		dataResponse = json.dumps(dataResponse)
+		return TemplateResponse(request, 'ver-historicos.html', {'datos': datos})
 

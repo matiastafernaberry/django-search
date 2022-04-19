@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-sm-3"></div>
           <div class="col-sm-6">
-            <h3>Índice Seo Reputacional</h3>
+            <h3>Históricos</h3>
           </div>
           <div class="col-sm-3"></div>
         </div>
@@ -16,22 +16,20 @@
           <thead>
             <tr>
               <th scope="col">Id</th>
-              <th scope="col">Proyecto</th>
-              <th scope="col">Busqueda</th>
-              <th scope="col">Pais</th>
-              <th scope="col">Fecha creación</th>
-              <th scope="col">Acicones</th>
+              <th scope="col">Fecha modificación</th>
+              <th scope="col">Url</th>
+              <th scope="col">Evaluación</th>
+              <th scope="col">Puntaje</th>
             </tr>
           </thead>
           <tbody>
             {% for item in datos %}
             <tr>
               <td>{{item.id}}</td>
-              <td>{{item.proyecto}}</td>
-              <td>{{item.busqueda}}</td>
-              <td>{{item.pais}}</td>
-              <td>{{item.when}}</td>
-              <td><a href="ver-historicos/{{item.id}}/">Ver Históricos</a></td>
+              <td>{{item.fecha_modificacion}}</td>
+              <td>{{item.url}}</td>
+              <td>{{item.evaluacion}}</td>
+              <td>{{item.puntaje}}</td>
             </tr>
             {% endfor %}
           </tbody>

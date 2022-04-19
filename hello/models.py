@@ -15,3 +15,4 @@ class ResultadoBusqueda(models.Model):
     busqueda = models.ForeignKey(Busqueda, on_delete=models.CASCADE)
     url = models.CharField(max_length=500)
     evaluacion = models.CharField(max_length=100)
+    puntaje = models.FloatField(null=True, blank=True, default=None)
