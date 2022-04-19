@@ -341,7 +341,7 @@ class GuardarResultadosBusquedaClass(View):
 class VerhistoricosClass(View):
 	"""docstring for MainClass"""
 	def get(self, request, id):
-		print(id)
+		#print(id)
 		datos = ResultadoBusqueda.objects.filter(busqueda__pk = id).order_by('url')
 		dataResponse = {
 			'status': "success",
