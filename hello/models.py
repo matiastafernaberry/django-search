@@ -16,3 +16,4 @@ class ResultadoBusqueda(models.Model):
     url = models.CharField(max_length=500)
     evaluacion = models.CharField(max_length=100)
     puntaje = models.FloatField(null=True, blank=True, default=None)
+    posicion = models.IntegerField(blank=True, null=True)

@@ -173,6 +173,8 @@ class NuevaBusquedaClass(View):
 			URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			resp = requests.get(URL, headers=headers)
 
+		print(URL)
+
 		soup = BeautifulSoup(resp.text, "html.parser")
 		if resp.status_code == 200:
 			soup = BeautifulSoup(resp.content, "html.parser")
@@ -289,36 +291,37 @@ class GuardarResultadosBusquedaClass(View):
 			)
 			id_resultados = datos_busqueda.id
 		print(" ")
-		count = 0
+		count = 1
 		for i in datos:
-			if count == 0: puntaje = 0.095
-			if count == 1: puntaje = 0.090
-			if count == 2: puntaje = 0.085
-			if count == 3: puntaje = 0.080
-			if count == 4: puntaje = 0.075
-			if count == 5: puntaje = 0.070
-			if count == 6: puntaje = 0.065
-			if count == 7: puntaje = 0.060
-			if count == 8: puntaje = 0.055
-			if count == 9: puntaje = 0.050
-			if count == 10: puntaje = 0.045
-			if count == 11: puntaje = 0.040
-			if count == 12: puntaje = 0.035
-			if count == 13: puntaje = 0.030
-			if count == 14: puntaje = 0.025
-			if count == 15: puntaje = 0.020
-			if count == 16: puntaje = 0.015
-			if count == 17: puntaje = 0.010
-			if count == 18: puntaje = 0.005
-			if count == 19: puntaje = 0.00095
-			if count == 20: puntaje = 0.00090
+			if count == 1: puntaje = 0.095
+			if count == 2: puntaje = 0.090
+			if count == 3: puntaje = 0.086
+			if count == 4: puntaje = 0.081
+			if count == 5: puntaje = 0.076
+			if count == 6: puntaje = 0.071
+			if count == 7: puntaje = 0.067
+			if count == 8: puntaje = 0.062
+			if count == 9: puntaje = 0.057
+			if count == 10: puntaje = 0.052
+			if count == 11: puntaje = 0.048
+			if count == 12: puntaje = 0.043
+			if count == 13: puntaje = 0.038
+			if count == 14: puntaje = 0.033
+			if count == 15: puntaje = 0.029
+			if count == 16: puntaje = 0.024
+			if count == 17: puntaje = 0.019
+			if count == 18: puntaje = 0.014
+			if count == 19: puntaje = 0.010
+			if count == 20: puntaje = 0.0005
+
 
 			print(i["url"])
 			b3 = ResultadoBusqueda(
 				url = i["url"], 
 				evaluacion = i["evalucion"],
 				busqueda = Busqueda.objects.get(id=id_resultados),
-				puntaje = puntaje
+				puntaje = puntaje,
+				posicion = count
 			)
 			b3.save()
 			count += 1

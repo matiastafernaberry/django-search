@@ -7,35 +7,70 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-3"></div>
-          <div class="col-sm-6">
+          <div class="col-sm-7">
             <h3>Históricos</h3>
           </div>
-          <div class="col-sm-3"></div>
+          <div class="col-sm-2 score">
+            <div class="row">
+              <div class="col-sm-12">Score</div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <h2 id="score_value">0</h2>
+              </div>
+            </div>
+          </div>
         </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Fecha modificación</th>
-              <th scope="col">Url</th>
-              <th scope="col">Evaluación</th>
-              <th scope="col">Puntaje</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in datos %}
-            <tr>
-              <td>{{item.id}}</td>
-              <td>{{item.fecha_modificacion}}</td>
-              <td>{{item.url}}</td>
-              <td>{{item.evaluacion}}</td>
-              <td>{{item.puntaje}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha modificación</th>
+                  <th scope="col">Url</th>
+                  <th scope="col">Evaluación</th>
+                  <th scope="col">Posición</th>
+                  <th scope="col">Puntaje</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in datos %}
+                <tr>
+                  <td>{{item.fecha_modificacion}}</td>
+                  <td>{{item.url}}</td>
+                  <td>{{item.evaluacion}}</td>
+                  <td>{{item.posicion}}</td>
+                  <td>{{item.puntaje}}</td>
+                  <input type="hidden" id="id_puntaje{{ forloop.counter0 }}" value="{{item.puntaje}}">
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
     </div>
 {% endautoescape %}
+<script>
+  
+  $(function() {
+    var suma = 0;
+    for (i = 0; i < 21; i++) {
+      if ($("#id_puntaje"+i).val() !== undefined){
+        if (i == 0){
+          suma = parseFloat($("#id_puntaje"+i).val());
+        } else {
+          suma += parseFloat($("#id_puntaje"+i).val());
+        }
+      }
+    }
+    var sumatotal = (suma*100).toFixed(1);
+    $("#score_value").html(sumatotal);
+    console.log(sumatotal);
+  });
+
+</script>
 {% endblock %}  
 {% endblock %}  
 

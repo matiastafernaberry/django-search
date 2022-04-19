@@ -106,19 +106,14 @@ img:hover{
 .navbar{
   padding-bottom: 1rem;
 }
-.col-sm-4{
+.score{
   padding: 3rem;
+  -webkit-box-shadow: 20px 17px 31px -21px rgba(113, 103, 8);
+  -moz-box-shadow: 20px 17px 31px -21px rgba(113, 103, 8);
+  box-shadow: 20px 17px 31px -21px rgb(113, 103, 8);
   
-  -webkit-box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
-  -moz-box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
-  box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
-  /*transform: skewY(5deg);*/
 }
-.col-sm-4:hover{
-  -webkit-box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
-  -moz-box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
-  box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
-}
+
 .news-from{
   background-color: #ececec;
     color: #444;
