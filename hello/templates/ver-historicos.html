@@ -42,6 +42,7 @@
                   <td>{{item.evaluacion}}</td>
                   <td>{{item.posicion}}</td>
                   <td>{{item.puntaje}}</td>
+                  <input type="hidden" id="id_evaluacion{{ forloop.counter0 }}" value="{{item.evaluacion}}">
                   <input type="hidden" id="id_puntaje{{ forloop.counter0 }}" value="{{item.puntaje}}">
                 </tr>
                 {% endfor %}
@@ -58,10 +59,12 @@
     var suma = 0;
     for (i = 0; i < 21; i++) {
       if ($("#id_puntaje"+i).val() !== undefined){
-        if (i == 0){
-          suma = parseFloat($("#id_puntaje"+i).val());
-        } else {
-          suma += parseFloat($("#id_puntaje"+i).val());
+        if ($("#id_evaluacion"+i).val() == "favorable" || $("#id_evaluacion"+i).val() == "neutral"){
+          if (i == 0){
+            suma = parseFloat($("#id_puntaje"+i).val());
+          } else {
+            suma += parseFloat($("#id_puntaje"+i).val());
+          }
         }
       }
     }
