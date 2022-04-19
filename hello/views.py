@@ -174,9 +174,6 @@ class NuevaBusquedaClass(View):
 			resp = requests.get(URL, headers=headers)
 
 		soup = BeautifulSoup(resp.text, "html.parser")
-		f = open("google.txt", "wb")
-		f.write(soup.prettify().encode('cp1252', errors='ignore'))
-		f.close()
 		if resp.status_code == 200:
 			soup = BeautifulSoup(resp.content, "html.parser")
 			results = []
