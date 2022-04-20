@@ -349,7 +349,7 @@ class PreVerhistoricosClass(View):
 	def get(self, request, id):
 		#print(id)
 		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, url, evaluacion, puntaje, posicion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY busqueda_id'.format(id))
-		datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, COUNT(id), id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion'.format(id))
+		datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion'.format(id))
 		for i in datos:
 			print(i.fecha_modificacion.strftime("%m-%d-%Y %H:%M"))
 		dataResponse = {
