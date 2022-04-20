@@ -17,10 +17,10 @@
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Proyecto</th>
-              <th scope="col">Busqueda</th>
+              <th scope="col">Búsqueda</th>
               <th scope="col">Pais</th>
               <th scope="col">Fecha creación</th>
-              <th scope="col">Acicones</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -31,7 +31,8 @@
               <td>{{item.busqueda}}</td>
               <td>{{item.pais}}</td>
               <td>{{item.when}}</td>
-              <td><a href="ver-historicos/{{item.id}}/">Ver Históricos</a></td>
+              <td><a href="historicos/{{item.id}}/">Ver Históricos</a></td>
+              <td><a href="re-evaluar/{{item.id}}/">Re evaluar</a></td>
             </tr>
             {% endfor %}
           </tbody>

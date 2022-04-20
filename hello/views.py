@@ -11,12 +11,10 @@ import operator
 import RAKE
 import jinja2
 import csv
+import random
+import string
 
-from nltk import sent_tokenize, ne_chunk, pos_tag, word_tokenize
-from nltk.tokenize.toktok import ToktokTokenizer
-from nltk.corpus import stopwords
-from nltk.chunk import conlltags2tree, tree2conlltags
-from nltk.stem import SnowballStemmer
+
 from bs4 import BeautifulSoup
 
 nltk.data.path.append('./nltk_data/')
@@ -34,6 +32,7 @@ from django.core.files.storage import FileSystemStorage
 
 from os import listdir
 from os.path import isfile, join
+from datetime import datetime
 
 
 #from .models import Greeting
@@ -231,8 +230,7 @@ class NuevaBusquedaClass(View):
 			datos_resultado_busqueda = ""
 			datos_busqueda = Busqueda.objects.filter(
 				busqueda__exact = busqueda,
-				proyecto__exact = proyecto,
-				pais__exact = paises
+				proyecto__exact = proyecto
 			)
 			print(" ")
 			print("datos_busqueda")
@@ -271,8 +269,7 @@ class GuardarResultadosBusquedaClass(View):
 
 		datos_busqueda = Busqueda.objects.filter(
 			busqueda__exact = busqueda["busqueda"],
-			proyecto__exact = busqueda["proyecto"],
-			pais__exact = busqueda["pais"]
+			proyecto__exact = busqueda["proyecto"]
 		)
 		if datos_busqueda.count() == 0:
 			b2 = Busqueda(
@@ -286,12 +283,13 @@ class GuardarResultadosBusquedaClass(View):
 		else:
 			datos_busqueda = Busqueda.objects.get(
 				busqueda__exact = busqueda["busqueda"],
-				proyecto__exact = busqueda["proyecto"],
-				pais__exact = busqueda["pais"]
+				proyecto__exact = busqueda["proyecto"]
 			)
 			id_resultados = datos_busqueda.id
 		print(" ")
 		count = 1
+		letters = string.ascii_lowercase
+		result_str = ''.join(random.choice(letters) for i in range(10))
 		for i in datos:
 			if count == 1: puntaje = 0.095
 			if count == 2: puntaje = 0.090
@@ -316,12 +314,18 @@ class GuardarResultadosBusquedaClass(View):
 
 
 			print(i["url"])
+			now = datetime.now()
+			now = now.strftime("%d-%m-%Y %H:%M")
+			tiempo = datetime.strptime(now, '%d-%m-%Y %H:%M')
+			
 			b3 = ResultadoBusqueda(
 				url = i["url"], 
 				evaluacion = i["evalucion"],
 				busqueda = Busqueda.objects.get(id=id_resultados),
 				puntaje = puntaje,
-				posicion = count
+				posicion = count,
+				fecha_modificacion = tiempo,
+				idstring = result_str
 			)
 			b3.save()
 			count += 1
@@ -340,8 +344,36 @@ class GuardarResultadosBusquedaClass(View):
 		return HttpResponse(dataResponse, content_type='application/json')
 
 
+class PreVerhistoricosClass(View):
+	"""docstring for MainClass"""
+	def get(self, request, id):
+		#print(id)
+		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, url, evaluacion, puntaje, posicion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY busqueda_id'.format(id))
+		datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, url, evaluacion, puntaje, posicion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion'.format(id))
+		for i in datos:
+			print(i.fecha_modificacion.strftime("%m-%d-%Y %H:%M"))
+		dataResponse = {
+			'status': "success",
+			'code': 200,
+		}
+		dataResponse = json.dumps(dataResponse)
+		return TemplateResponse(request, 'historicos.html', {'datos': datos})
+
 
 class VerhistoricosClass(View):
+	"""docstring for MainClass"""
+	def get(self, request, id):
+		#print(id)
+		datos = ResultadoBusqueda.objects.filter(idstring = id).order_by('posicion')
+		dataResponse = {
+			'status': "success",
+			'code': 200,
+		}
+		dataResponse = json.dumps(dataResponse)
+		return TemplateResponse(request, 'ver-historicos.html', {'datos': datos})
+
+
+class ReEvaluarClass(View):
 	"""docstring for MainClass"""
 	def get(self, request, id):
 		#print(id)

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+{% block body %}
+  <!-- Page Content -->
+  {% autoescape on %}
+  <div>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha modificación</th>
+                  <th scope="col">Proyecto</th>
+                  <th scope="col">Búsqueda</th>
+                  <th scope="col">Pais</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in datos %}
+                <tr>
+                  <td>{{item.fecha_modificacion}}</td>
+                  <td>{{item.busqueda.proyecto}}</td>
+                  <td>{{item.busqueda.busqueda}}</td>
+                  <td>{{item.busqueda.pais}}</td>
+                  <td><a href="ver-historicos/{{item.idstring}}/">Ver Históricos</a></td>
+                  <input type="hidden" id="id_evaluacion{{ forloop.counter0 }}" value="{{item.evaluacion}}">
+                  <input type="hidden" id="id_puntaje{{ forloop.counter0 }}" value="{{item.puntaje}}">
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+    </div>
+{% endautoescape %}
+{% endblock %}  
+{% endblock %}  
+
