@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% block content %}
+{% block body %}
+  <!-- Page Content -->
+  {% autoescape on %}
+  <div>
+    <div id="main" class="site-main">
+      <div class="container" style="margin-top:0">
+        <div class="row">
+          <div class="col-sm-3">&nbsp;</div>
+          <div class="col-sm-6 title-busqueda">
+            <h3>Configurar nueva búsqueda</h3>
+          </div>
+          <div class="col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">&nbsp;</div>
+          <div class="formulario col-sm-6">
+            <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Proyecto</label>
+                <input type="hidden" name="pais" maxlength="100" required="" id="id_pais_hidden" class="form-control" value="{{pais}}">
+                {% if proyecto %}
+                  <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control" value="{{proyecto}}">
+                {% else %}
+                  <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control">
+                {% endif %}
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Búsqueda</label>
+                {% if busqueda %}
+                  <input type="text" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda" value="{{busqueda}}"> 
+                {% else %}
+                  <input type="text" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda">
+                {% endif %}
+                <!--input type="text" class="form-control" id="busqueda" name="busqueda"-->
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Tipo de Búsqueda</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios1" value="busqueda" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Búsqueda
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios2" value="imagen">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Imagen
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios2" value="video">
+                  <label class="form-check-label" for="exampleRadios3">
+                    Video
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Pais</label>
+                {% if lista_paises %}
+                  <select class="custom-select mr-sm-2" id="id_paises" name="paises">
+                    <option selected value="">Choose...</option>
+                    {% for key, value in lista_paises.items %}  
+                      <option value="{{value}}">{{key}}</option>
+                    {% endfor %}
+                  </select>
+                {% endif %}
+              </div>
+              <button type="submit" class="btn btn-primary">Búsqueda</button>
+              {% for item in datos_busqueda %}
+                {{ item.busqueda }}
+              {% endfor %}
+            </form>
+        </div>
+        <div class="col-sm-3">&nbsp;</div>
+      </div>
+      <hr>
+        {% if results %}
+        <input id="pais_result" type="hidden" value="{{pais_post}}">
+
+        <div class="row resultado-busqueda">
+          <div class="col-sm-10"><h3>Contenido</h3></div>
+          <div class="col-sm-2"><h3>Evalución</h3></div>
+        </div>
+          {% for item in results %}
+            <div class="items-search">
+              <div class="row">
+                <div class="col-sm-10" id="div-url-{{ forloop.counter0 }}" data="{{item.url}}">
+                  {{item.url}}
+                </div>
+                <div class="col-sm-2">&nbsp;</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-10">
+                  <h5 class="link-url"><a href="{{item.url}}" target="_blank">{{item.title}}</a></h5>
+                </div>
+                <div class="col-sm-2">&nbsp;</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-10">
+                  <span>{{item.description}}</span>
+                </div>
+                <div class="col-sm-1"> 
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input radiob-black" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio1{{ forloop.counter0 }}" value="sinevaluar" checked>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input radiob-green" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio2{{ forloop.counter0 }}" value="favorable">
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input radiob-gray" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio3{{ forloop.counter0 }}" value="neutral">
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input radiob-red" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio4{{ forloop.counter0 }}" value="desfavorable">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- The Modal -->
+            <div id="{{ forloop.counter0 }}" class="modal">
+              <!-- Modal content -->
+              <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data"></form>
+                <div class="modal-content">
+                  <span class="close" onclick="closeModal({{ forloop.counter0 }})">&times;</span>
+                  <input type="hidden" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda" value="{{item.url}}">
+                  <p>{{item.url}}</p>
+                  <p>{{item.title}}</p>
+                  <p>{{item.description}}</p>
+                </div>
+              </form>
+            </div>
+          {% endfor %}
+        <div class="row resultado-busqueda">
+          <div class="col-sm-12 text-center">
+            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">Guardar Evaluciónes</button>
+          </div>
+        </div>
+        {% endif %}
+        <div class="row resultado-busqueda">
+          <div class="col-sm-10">&nbsp;</div>
+          <div class="col-sm-2">&nbsp;</div>
+        </div>
+    </div>
+    
+{% endautoescape %}
+  <script>
+  // $('#id_paises option[value=pa]').attr('selected','selected');
+  //pais_result
+  $(function() {
+    console.log('load');
+    if($('#pais_result').val()){
+      $('#id_paises option[value='+$('#pais_result').val()+']').attr('selected','selected');
+    }
+  });
+  function openModal(id){
+    var modal = document.getElementById(id);
+    modal.style.display = "block";
+  }
+  function closeModal(id){
+    var modal = document.getElementById(id);
+    modal.style.display = "none";
+  }
+  function saveEvalucaion() {
+    var radios = document.getElementsByTagName('input');
+    var lista = [];
+    for (i = 0; i < radios.length; i++) {
+        if (radios[i].type == 'radio' && radios[i].checked) {
+            //console.log(radios[i].name);
+            //console.log($("#div-url-"+radios[i].name).attr("data"));
+            if (radios[i].name !== "tipobusqueda"){
+              var datos = {};
+              datos["url"] = $("#div-url-"+radios[i].name).attr("data");
+              datos["evalucion"] = radios[i].value;
+              lista.push(datos);
+            }
+        }
+    }
+    
+    var datosBusqueda = {};
+    datosBusqueda["proyecto"] = $("#id_proyecto").val();
+    datosBusqueda["busqueda"] = $("#id_busqueda").val();
+    datosBusqueda["pais"] = $("#id_paises").val();
+    datosBusqueda["tipobusqueda"] = $('input[name="tipobusqueda"]:checked').val();
+
+    console.log("lista");
+    console.log(lista);
+    console.log(datosBusqueda);
+
+    $.ajax({
+        type: "POST",
+        url: "guardar-busqueda/",
+        data: JSON.stringify({ "busqueda": JSON.stringify(datosBusqueda), "datos" : JSON.stringify(lista) }),
+        success: function(data) { 
+          console.log(data);
+          window.location.replace("/");
+        },
+        dataType: "text",
+        contentType : "text/plain"
+    });
+    
+    //div-url- get atribute data and the radio buttons checket
+    //$("#div-url-0").attr("data");
+  }
+  $("#guardar-evaluaciones").click(function() {
+    saveEvalucaion();
+  });
+  //saveEvalucaion();
+  </script>
+{% endblock %}  
+{% endblock %}  
+

@@ -159,22 +159,23 @@ class NuevaBusquedaClass(View):
 		query = busqueda.replace(' ', '+')
 		if tipobusqueda == "busqueda":
 			if paises != "com":
-				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			else:
-				URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+				URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 		if tipobusqueda == "imagen":
-			URL = f"https://images.google.com/search?q={query}&num=20"
+			URL = f"https://images.google.com/search?q={query}&num=30"
 		if tipobusqueda == "video":
-			URL = f"https://www.google.com/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=20&cr=country{paises}"
+			URL = f"https://www.google.com/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=30&cr=country{paises}"
 		try:
 			resp = requests.get(URL, headers=headers)
 		except:
-			URL = f"https://google.com/search?q={query}&oq={query}&num=20&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+			URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			resp = requests.get(URL, headers=headers)
 
 		print(URL)
 
 		soup = BeautifulSoup(resp.text, "html.parser")
+		count = 1
 		if resp.status_code == 200:
 			soup = BeautifulSoup(resp.content, "html.parser")
 			results = []
@@ -211,8 +212,10 @@ class NuevaBusquedaClass(View):
 									for data in i.find_all('h3'):
 										title_search = data.get_text()
 									d = {"title": title_search,"url":i['href'],"description":""}
-									results.append(d)
-									lista_url.append(i['href'])
+									if count < 21:
+										results.append(d)
+										lista_url.append(i['href'])
+									count += 1
 							try:
 								if i.h3['class'][0] == "LC20lb": pass
 									#print(i['href'])
@@ -253,6 +256,7 @@ class NuevaBusquedaClass(View):
 			'busqueda': busqueda,
 			'datos_busqueda': datos_resultado_busqueda
 		})
+
 
 
 class GuardarResultadosBusquedaClass(View):
@@ -312,8 +316,6 @@ class GuardarResultadosBusquedaClass(View):
 			if count == 19: puntaje = 0.010
 			if count == 20: puntaje = 0.0005
 
-
-			print(i["url"])
 			now = datetime.now()
 			now = now.strftime("%d-%m-%Y %H:%M")
 			tiempo = datetime.strptime(now, '%d-%m-%Y %H:%M')
@@ -350,8 +352,8 @@ class PreVerhistoricosClass(View):
 		#print(id)
 		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, url, evaluacion, puntaje, posicion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY busqueda_id'.format(id))
 		datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion'.format(id))
-		for i in datos:
-			print(i.fecha_modificacion.strftime("%m-%d-%Y %H:%M"))
+		#for i in datos:
+		#	print(i.fecha_modificacion.strftime("%m-%d-%Y %H:%M"))
 		dataResponse = {
 			'status': "success",
 			'code': 200,
@@ -373,15 +375,97 @@ class VerhistoricosClass(View):
 		return TemplateResponse(request, 'ver-historicos.html', {'datos': datos})
 
 
+
+
+
 class ReEvaluarClass(View):
 	"""docstring for MainClass"""
 	def get(self, request, id):
-		#print(id)
-		datos = ResultadoBusqueda.objects.filter(busqueda__pk = id).order_by('url')
-		dataResponse = {
-			'status': "success",
-			'code': 200,
-		}
-		dataResponse = json.dumps(dataResponse)
-		return TemplateResponse(request, 'ver-historicos.html', {'datos': datos})
+		USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
+		headers = {"user-agent" : USER_AGENT}
+		query = busqueda.replace(' ', '+')
+		if tipobusqueda == "busqueda":
+			if paises != "com":
+				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+			else:
+				URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+		if tipobusqueda == "imagen":
+			URL = f"https://images.google.com/search?q={query}&num=30"
+		if tipobusqueda == "video":
+			URL = f"https://www.google.com/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=30&cr=country{paises}"
+		try:
+			resp = requests.get(URL, headers=headers)
+		except:
+			URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
+			resp = requests.get(URL, headers=headers)
+
+		print(URL)
+
+		soup = BeautifulSoup(resp.text, "html.parser")
+		count = 1
+		if resp.status_code == 200:
+			soup = BeautifulSoup(resp.content, "html.parser")
+			results = []
+			lista_url = []
+			for g in soup.find_all('div', class_='g'):
+				anchors = g.find_all('a')
+				for data in g.find_all('span'):
+					description = data.get_text()
+				for data in g.find_all('h3'):
+					title_search = data.get_text()
+				if anchors:
+					try:
+						link = anchors[0]['href']
+						for i in anchors:
+							if i.h3:
+								if i['href'] not in lista_url:
+									description = i.h3.get_text()
+									for data in i.find_all('span'):
+										description = data.get_text()
+									for data in i.find_all('h3'):
+										title_search = data.get_text()
+									d = {"title": title_search,"url":i['href'],"description":""}
+									if count < 21:
+										results.append(d)
+										lista_url.append(i['href'])
+									count += 1
+							try:
+								if i.h3['class'][0] == "LC20lb": pass
+							except: pass
+					except: 
+						print("line 201 error ")
+						print(traceback.format_exc())
+		
+		f = open("paisesdos.yml", "r")
+		lista_paises = {}
+		for x in f:
+			pais = x.split()
+			lista_paises[pais[0]] = pais[1].lower()
+		try:
+			datos_resultado_busqueda = ""
+			datos_busqueda = Busqueda.objects.filter(
+				busqueda__exact = busqueda,
+				proyecto__exact = proyecto
+			)
+			print(" ")
+			print("datos_busqueda")
+			print(datos_busqueda.count())
+			if datos_busqueda.count() > 0:
+				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
+				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
+
+		except: 
+			print("error")
+			print(traceback.format_exc())
+			datos_busqueda = ""
+		
+		return TemplateResponse(request, 'nueva-busqueda.html', {
+			'results': results, 
+			'lista_paises': lista_paises, 
+			'pais_post': paises,
+			'form': form,
+			'proyecto': proyecto,
+			'busqueda': busqueda,
+			'datos_busqueda': datos_resultado_busqueda
+		})
 
