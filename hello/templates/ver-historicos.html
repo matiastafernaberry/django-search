@@ -41,7 +41,9 @@
                   <td>{{item.url}}</td>
                   <td>{{item.evaluacion}}</td>
                   <td>{{item.posicion}}</td>
-                  <td>{{item.puntaje}}</td>
+                  {% if item.evaluacion != "desfavorable" %}
+                    <td>{{item.puntaje}}</td>
+                  {% endif %}
                   <input type="hidden" id="id_evaluacion{{ forloop.counter0 }}" value="{{item.evaluacion}}">
                   <input type="hidden" id="id_puntaje{{ forloop.counter0 }}" value="{{item.puntaje}}">
                 </tr>

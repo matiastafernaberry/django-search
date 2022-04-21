@@ -69,7 +69,8 @@
               </div>
               <button type="submit" class="btn btn-primary">Búsqueda</button>
               {% for item in datos_busqueda %}
-                {{ item.busqueda }}
+                <input type="hidden" id="datosurl{{ forloop.counter0 }}" value="{{ item.url }}">
+                <input type="hidden" id="datosevaluacion{{ forloop.counter0 }}" value="{{ item.evaluacion }}">
               {% endfor %}
             </form>
         </div>
@@ -117,6 +118,7 @@
                 </div>
               </div>
             </div>
+            <input type="hidden" id="busquedaurl{{ forloop.counter0 }}" value="{{ item.url }}">
             <!-- The Modal -->
             <div id="{{ forloop.counter0 }}" class="modal">
               <!-- Modal content -->
@@ -152,6 +154,32 @@
     if($('#pais_result').val()){
       $('#id_paises option[value='+$('#pais_result').val()+']').attr('selected','selected');
     }
+    var datos = new Array();
+    
+    for (i = 0; i < 21; i++) {
+        datos[$('#datosurl'+i).val()] = $('#datosevaluacion'+i).val();
+    }
+    for (i = 0; i < 21; i++) {
+        prop = $('#busquedaurl'+i).val();
+        if (datos.hasOwnProperty(prop)){
+            console.log();
+            if (datos[prop] == 'sinevaluar'){
+                $("#inlineRadio1"+i).prop("checked", true);
+            }
+            if (datos[prop] == 'favorable'){
+                $("#inlineRadio2"+i).prop("checked", true);
+            }
+            if (datos[prop] == 'neutral'){
+                $("#inlineRadio3"+i).prop("checked", true);
+            }
+            if (datos[prop] == 'desfavorable'){
+                $("#inlineRadio4"+i).prop("checked", true);
+            }
+
+        }
+        
+    }
+    //console.log(datos["https://www.infobae.com/tag/luis-lacalle-pou/"]);
   });
   function openModal(id){
     var modal = document.getElementById(id);

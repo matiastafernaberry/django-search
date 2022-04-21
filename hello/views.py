@@ -147,8 +147,8 @@ class NuevaBusquedaClass(View):
 	def post(self, request):
 		form = BusquedaForm()
 		dataPost = request.body.decode('utf-8')
-		proyecto = self.request.POST['proyecto']
-		busqueda = self.request.POST['busqueda']
+		proyecto = (self.request.POST['proyecto']).lower()
+		busqueda = (self.request.POST['busqueda']).lower()
 		tipobusqueda = self.request.POST['tipobusqueda']
 		paises = self.request.POST['paises']
 		paisesUpper = paises.upper()
@@ -277,8 +277,8 @@ class GuardarResultadosBusquedaClass(View):
 		)
 		if datos_busqueda.count() == 0:
 			b2 = Busqueda(
-				proyecto = busqueda["proyecto"], 
-				busqueda = busqueda["busqueda"],
+				proyecto = (busqueda["proyecto"]).lower(), 
+				busqueda = (busqueda["busqueda"]).lower(),
 				tipobusqueda = busqueda["tipobusqueda"],
 				pais = busqueda["pais"]
 			)
@@ -351,6 +351,7 @@ class PreVerhistoricosClass(View):
 	def get(self, request, id):
 		#print(id)
 		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, url, evaluacion, puntaje, posicion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY busqueda_id'.format(id))
+		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion order by fecha_modificacion desc limit 1'.format(id))
 		datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion'.format(id))
 		#for i in datos:
 		#	print(i.fecha_modificacion.strftime("%m-%d-%Y %H:%M"))
@@ -383,7 +384,12 @@ class ReEvaluarClass(View):
 	def get(self, request, id):
 		USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
 		headers = {"user-agent" : USER_AGENT}
-		query = busqueda.replace(' ', '+')
+		datos = Busqueda.objects.get(id = id)
+		query = datos.busqueda
+		busqueda = datos.busqueda.lower()
+		proyecto = datos.proyecto.lower()
+		tipobusqueda = datos.tipobusqueda
+		paises = datos.pais
 		if tipobusqueda == "busqueda":
 			if paises != "com":
 				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
@@ -398,8 +404,6 @@ class ReEvaluarClass(View):
 		except:
 			URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			resp = requests.get(URL, headers=headers)
-
-		print(URL)
 
 		soup = BeautifulSoup(resp.text, "html.parser")
 		count = 1
@@ -452,18 +456,20 @@ class ReEvaluarClass(View):
 			print(datos_busqueda.count())
 			if datos_busqueda.count() > 0:
 				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
-				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
+				datos_resultado_busqueda = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion order by fecha_modificacion desc limit 1'.format(datos_busqueda.id))
+				for i in datos_resultado_busqueda:
+					idstringg = i.idstring
+				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(idstring = idstringg)
 
 		except: 
 			print("error")
 			print(traceback.format_exc())
 			datos_busqueda = ""
 		
-		return TemplateResponse(request, 'nueva-busqueda.html', {
+		return TemplateResponse(request, 're-evaluar.html', {
 			'results': results, 
 			'lista_paises': lista_paises, 
 			'pais_post': paises,
-			'form': form,
 			'proyecto': proyecto,
 			'busqueda': busqueda,
 			'datos_busqueda': datos_resultado_busqueda
