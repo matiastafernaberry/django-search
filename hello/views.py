@@ -172,8 +172,6 @@ class NuevaBusquedaClass(View):
 			URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
 			resp = requests.get(URL, headers=headers)
 
-		print(URL)
-
 		soup = BeautifulSoup(resp.text, "html.parser")
 		count = 1
 		if resp.status_code == 200:
@@ -184,11 +182,10 @@ class NuevaBusquedaClass(View):
 				#another_page = g.find_all('div', class_='g')
 				#print("nother page")
 				#print(g)
+				description = ''
 				anchors = g.find_all('a')
-				for data in g.find_all('span'):
+				for data in g.find_all('div', class_='VwiC3b'):
 					description = data.get_text()
-				for data in g.find_all('h3'):
-					title_search = data.get_text()
 				if anchors:
 					#title_search = anchors.find('h3')
 					try:
@@ -206,12 +203,12 @@ class NuevaBusquedaClass(View):
 								if i['href'] not in lista_url:
 									#print(i)
 									#print(i.h3.get_text())
-									description = i.h3.get_text()
-									for data in i.find_all('span'):
-										description = data.get_text()
+									#description = i.h3.get_text()
+									#for data in i.find_all('span'):
+									#	description = data.get_text()
 									for data in i.find_all('h3'):
 										title_search = data.get_text()
-									d = {"title": title_search,"url":i['href'],"description":""}
+									d = {"title": title_search,"url":i['href'],"description":description}
 									if count < 21:
 										results.append(d)
 										lista_url.append(i['href'])
@@ -417,6 +414,8 @@ class ReEvaluarClass(View):
 					description = data.get_text()
 				for data in g.find_all('h3'):
 					title_search = data.get_text()
+				print(" a ")
+				print(anchors)
 				if anchors:
 					try:
 						link = anchors[0]['href']
@@ -428,7 +427,8 @@ class ReEvaluarClass(View):
 										description = data.get_text()
 									for data in i.find_all('h3'):
 										title_search = data.get_text()
-									d = {"title": title_search,"url":i['href'],"description":""}
+									
+									d = {"title": title_search,"url":i['href'],"description":description}
 									if count < 21:
 										results.append(d)
 										lista_url.append(i['href'])
@@ -437,6 +437,7 @@ class ReEvaluarClass(View):
 								if i.h3['class'][0] == "LC20lb": pass
 							except: pass
 					except: 
+						print(" ")
 						print("line 201 error ")
 						print(traceback.format_exc())
 		
@@ -451,9 +452,9 @@ class ReEvaluarClass(View):
 				busqueda__exact = busqueda,
 				proyecto__exact = proyecto
 			)
-			print(" ")
-			print("datos_busqueda")
-			print(datos_busqueda.count())
+			#print(" ")
+			#print("datos_busqueda")
+			#print(datos_busqueda.count())
 			if datos_busqueda.count() > 0:
 				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
 				datos_resultado_busqueda = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion order by fecha_modificacion desc limit 1'.format(datos_busqueda.id))
