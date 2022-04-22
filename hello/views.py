@@ -178,9 +178,12 @@ class NuevaBusquedaClass(View):
 			soup = BeautifulSoup(resp.content, "html.parser")
 			results = []
 			lista_url = []
+			for g in soup.find_all('g-section-with-header', class_='yG4QQe'):
+				print(" ")
+				print("Noticias destacadas" in g.get_text())
 			for g in soup.find_all('div', class_='g'):
 				#another_page = g.find_all('div', class_='g')
-				#print("nother page")
+				#print(" ")
 				#print(g)
 				description = ''
 				anchors = g.find_all('a')
@@ -324,7 +327,9 @@ class GuardarResultadosBusquedaClass(View):
 				puntaje = puntaje,
 				posicion = count,
 				fecha_modificacion = tiempo,
-				idstring = result_str
+				idstring = result_str,
+				titulo = i["titulo"],
+				descripcion = i["descripcion"]
 			)
 			b3.save()
 			count += 1
@@ -371,9 +376,6 @@ class VerhistoricosClass(View):
 		}
 		dataResponse = json.dumps(dataResponse)
 		return TemplateResponse(request, 'ver-historicos.html', {'datos': datos})
-
-
-
 
 
 class ReEvaluarClass(View):

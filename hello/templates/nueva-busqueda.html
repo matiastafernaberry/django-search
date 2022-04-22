@@ -80,25 +80,29 @@
         <input id="pais_result" type="hidden" value="{{pais_post}}">
 
         <div class="row resultado-busqueda">
-          <div class="col-sm-10"><h3>Contenido</h3></div>
+          <div class="col-sm-2"><h3></h3></div>
+          <div class="col-sm-8"><h3>Contenido</h3></div>
           <div class="col-sm-2"><h3>Evalución</h3></div>
         </div>
           {% for item in results %}
             <div class="items-search">
               <div class="row">
                 <div class="col-sm-10" id="div-url-{{ forloop.counter0 }}" data="{{item.url}}">
+                  {{ forloop.counter }} -
                   {{item.url}}
                 </div>
                 <div class="col-sm-2">&nbsp;</div>
               </div>
               <div class="row">
-                <div class="col-sm-10">
-                  <h5 class="link-url"><a href="{{item.url}}" target="_blank">{{item.title}}</a></h5>
+                <div class="col-sm-10" id="div-title-{{ forloop.counter0 }}" data="{{item.title}}">
+                  <h5 class="link-url">
+                    <a href="{{item.url}}" target="_blank">{{item.title}}</a>
+                  </h5>
                 </div>
                 <div class="col-sm-2">&nbsp;</div>
               </div>
               <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-10" id="div-description-{{ forloop.counter0 }}" data="{{item.description}}">
                   <span>{{item.description}}</span>
                 </div>
                 <div class="col-sm-1"> 
@@ -123,7 +127,9 @@
               <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data"></form>
                 <div class="modal-content">
                   <span class="close" onclick="closeModal({{ forloop.counter0 }})">&times;</span>
-                  <input type="hidden" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda" value="{{item.url}}">
+                  <input type="hidden" id="id_busqueda" value="{{item.url}}">
+                  <input type="hidden" id="id_title" value="{{item.title}}">
+                  <input type="hidden" id="id_description" value="{{item.description}}">
                   <p>{{item.url}}</p>
                   <p>{{item.title}}</p>
                   <p>{{item.description}}</p>
@@ -133,7 +139,7 @@
           {% endfor %}
         <div class="row resultado-busqueda">
           <div class="col-sm-12 text-center">
-            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">Guardar Evaluciónes</button>
+            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">Guardar Resultados</button>
           </div>
         </div>
         {% endif %}
@@ -171,6 +177,8 @@
             if (radios[i].name !== "tipobusqueda"){
               var datos = {};
               datos["url"] = $("#div-url-"+radios[i].name).attr("data");
+              datos["titulo"] = $("#div-title-"+radios[i].name).attr("data");
+              datos["descripcion"] = $("#div-description-"+radios[i].name).attr("data");
               datos["evalucion"] = radios[i].value;
               lista.push(datos);
             }

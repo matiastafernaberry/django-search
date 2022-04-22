@@ -6,7 +6,7 @@ class BusquedaAdmin(admin.ModelAdmin):
     list_display= ('when', 'proyecto', 'busqueda', 'pais')
 
 class ResultadoBusquedaAdmin(admin.ModelAdmin):
-    list_display= ('when', 'fecha_modificacion', 'busqueda', 'url', 'evaluacion', 'puntaje', 'idstring')
+    list_display= ('when', 'fecha_modificacion', 'busqueda', 'url', 'evaluacion', 'puntaje', 'titulo', 'descripcion', 'idstring')
 
 
 
