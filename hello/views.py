@@ -239,7 +239,7 @@ class NuevaBusquedaClass(View):
 			print("datos_busqueda")
 			print(datos_busqueda.count())
 			if datos_busqueda.count() > 0:
-				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
+				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda, proyecto__exact = proyecto)
 				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
 
 		except: 
@@ -343,6 +343,7 @@ class GuardarResultadosBusquedaClass(View):
 		dataResponse = {
 			'status': "success",
 			'code': 200,
+			'idstring':b3.idstring
 		}
 		dataResponse = json.dumps(dataResponse)
 		return HttpResponse(dataResponse, content_type='application/json')

@@ -31,6 +31,10 @@
     <!--link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"-->
     <link link rel=stylesheet href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type=text/css>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet"> 
+    
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -42,7 +46,7 @@
   background-color: #fff;
   background-color: #fff;
   font-size: 14px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 img{
   /*max-width: 80%;
@@ -142,22 +146,22 @@ img:hover{
 .site-main{
   padding-top: 4rem;
 }
+
 .navbar{
   padding-bottom: 1rem;
+}
+.navbar{
+  box-shadow: 8px 19px 34px -9px rgba(0,0,0,0.36);
+-webkit-box-shadow: 8px 19px 34px -9px rgba(0,0,0,0.36);
+-moz-box-shadow: 8px 19px 34px -9px rgba(0,0,0,0.36);
 }
 .col-sm-4{
   padding: 3rem;
   
-  -webkit-box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
-  -moz-box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
-  box-shadow: -22px 27px 61px -21px rgba(113, 103, 8);
+  
   /*transform: skewY(5deg);*/
 }
-.col-sm-4:hover{
-  -webkit-box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
-  -moz-box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
-  box-shadow: 22px 27px 61px -21px rgba(113, 103, 8);
-}
+
 .news-from{
   background-color: #ececec;
     color: #444;
@@ -333,7 +337,7 @@ body{
   background-color: #fff;
   background-color: #fff;
   font-size: 14px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 img{
   /*max-width: 80%;
@@ -353,7 +357,7 @@ img{
   -ms-transform: skewY(20deg); /* IE 9 */
   /*-webkit-transform: skewY(-10deg); /* Safari 3-8 */
   /*transform: skewY(-5deg);*/
-      background-color: black;
+      background-color: transparent;
     /* transform: skewY(
 -5deg
 ); */

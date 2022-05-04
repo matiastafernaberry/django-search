@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-sm-3"></div>
           <div class="col-sm-7">
-            <h3>Históricos</h3>
+            <h3>Histórico</h3>
           </div>
           <div class="col-sm-2 score">
             <div class="row">
@@ -24,31 +24,60 @@
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Fecha modificación</th>
-                  <th scope="col">Url</th>
-                  <th scope="col">Evaluación</th>
-                  <th scope="col">Posición</th>
-                  <th scope="col">Puntaje</th>
-                </tr>
-              </thead>
+            <table class="table table-bordered">
+              
               <tbody>
                 {% for item in datos %}
+                {% if forloop.counter0 == 0 %}
                 <tr>
                   <td>{{item.fecha_modificacion}}</td>
-                  <td>{{item.url}}</td>
-                  <td>{{item.evaluacion}}</td>
-                  <td>{{item.posicion}}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                  <td>
+                    <p>{{item.posicion}} - {{item.url}}</p>
+                    <p><h5><a href="{{item.url}}">{{item.titulo}}</a></h5></p>
+                    <p>{{item.descripcion}}</p>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      {% if item.evaluacion == "sinevaluar" %}
+                        <input class="form-check-input radiob-black" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio1{{ forloop.counter0 }}" value="sinevaluar" checked>
+                      {% else %}
+                        <input class="form-check-input radiob-black" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio1{{ forloop.counter0 }}" value="sinevaluar">
+                      {% endif %}
+                    </div>
+                    <div class="form-check form-check-inline">
+                      {% if item.evaluacion == "favorable" %}
+                        <input class="form-check-input radiob-green" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio2{{ forloop.counter0 }}" value="favorable" checked>
+                      {% else %}
+                        <input class="form-check-input radiob-green" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio2{{ forloop.counter0 }}" value="favorable">
+                      {% endif %}
+                    </div>
+                    <div class="form-check form-check-inline">
+                      {% if item.evaluacion == "neutral" %}
+                        <input class="form-check-input radiob-gray" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio3{{ forloop.counter0 }}" value="neutral" checked>
+                      {% else %}
+                        <input class="form-check-input radiob-gray" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio3{{ forloop.counter0 }}" value="neutral">
+                      {% endif %}
+                    </div>
+                    <div class="form-check form-check-inline">
+                      {% if item.evaluacion == "desfavorable" %}
+                        <input class="form-check-input radiob-red" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio4{{ forloop.counter0 }}" value="desfavorable" checked>
+                      {% else %}
+                        <input class="form-check-input radiob-red" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio4{{ forloop.counter0 }}" value="desfavorable">
+                      {% endif %}
+                    </div>
+                  </td>
                   {% if item.evaluacion != "desfavorable" %}
-                    <td>{{item.puntaje}}</td>
+                    <td>{% widthratio item.puntaje 1 100 %}</td>
                   {% else %}
                     <td>0</td>
                   {% endif %}
+                  
+                </tr>
                   <input type="hidden" id="id_evaluacion{{ forloop.counter0 }}" value="{{item.evaluacion}}">
                   <input type="hidden" id="id_puntaje{{ forloop.counter0 }}" value="{{item.puntaje}}">
-                </tr>
                 {% endfor %}
               </tbody>
             </table>

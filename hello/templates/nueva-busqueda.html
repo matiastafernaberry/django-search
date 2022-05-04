@@ -68,9 +68,6 @@
                 {% endif %}
               </div>
               <button type="submit" class="btn btn-primary">Búsqueda</button>
-              {% for item in datos_busqueda %}
-                {{ item.busqueda }}
-              {% endfor %}
             </form>
         </div>
         <div class="col-sm-3">&nbsp;</div>
@@ -139,7 +136,9 @@
           {% endfor %}
         <div class="row resultado-busqueda">
           <div class="col-sm-12 text-center">
-            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">Guardar Resultados</button>
+            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">
+              Guardar Resultados
+            </button>
           </div>
         </div>
         {% endif %}
@@ -194,14 +193,16 @@
     console.log("lista");
     console.log(lista);
     console.log(datosBusqueda);
-
+    $('#guardar-evaluaciones').append('<img src="static/load.gif" alt="" width="50" height="60" >');
+    
     $.ajax({
         type: "POST",
         url: "guardar-busqueda/",
         data: JSON.stringify({ "busqueda": JSON.stringify(datosBusqueda), "datos" : JSON.stringify(lista) }),
         success: function(data) { 
-          console.log(data);
-          window.location.replace("/");
+          var data = JSON.parse(data);
+          console.log(data["idstring"]);
+          window.location.replace("/ver-historicos/"+data["idstring"])+"/";
         },
         dataType: "text",
         contentType : "text/plain"
@@ -212,6 +213,7 @@
   }
   $("#guardar-evaluaciones").click(function() {
     saveEvalucaion();
+    $("button").prop("disabled", false);
   });
   //saveEvalucaion();
   </script>
