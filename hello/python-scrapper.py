@@ -27,6 +27,8 @@ browser.implicitly_wait(5)
 configuracion = browser.find_element(By.ID, "regionanchormore")
 configuracion.click()
 browser.implicitly_wait(5)
+browser.execute_script("document.getElementById('result_slider').setAttribute('aria-valuenow', '20')")
+print(browser.execute_script("document.getElementById('result_slider').getAttribute('aria-valuenow')"))
 configuracion = browser.find_element(by=By.XPATH, value="//div[@class='jfk-radiobutton' and @data-value='UY']")
 configuracion.click()
 browser.implicitly_wait(5)
@@ -46,15 +48,32 @@ try:
     else: print("no es noticias destacada")
 except: print("no es noticias destacada")
 
+
 primer_link = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]")
 print(" ")
 print(primer_link[0])
 for c in primer_link: pass
     #print(c.tag_name)
     #print(c.text)
+#texto = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/div[1]/div[1]/div/a/h3")
+texto = browser.find_elements(by=By.CSS_SELECTOR, value=".g")
 
-#
+for c in texto:
+    #print(c.get_attribute('innerHTML'))
+    print(" ")
+    print(c.text)
+    lista = c.find_elements(by=By.TAG_NAME, value="a")
+    count,coun = 0,0
+    for d in lista:
+        url = d.get_attribute("href")
+        if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url:
+            print("url")
+            print(url)
+            count += 1
+            if count == 20: break
+    coun += 1
+    if coun == 20: break
 
-
+#driver.FindElement(By.CssSelector("#rightbar > .menu > li:nth-of-type(3) > h5"));
 browser.implicitly_wait(55)
 
