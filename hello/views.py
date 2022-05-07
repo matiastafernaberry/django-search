@@ -49,7 +49,6 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 )
 
 
-
 class BuzzTrackerClass(View):
 	"""docstring for MainClass"""
 	def get(self, request):
