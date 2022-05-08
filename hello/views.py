@@ -202,10 +202,16 @@ class NuevaBusquedaClass(View):
 		configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input") #
 		configuracion.send_keys(busqueda) #search lacalle pou
 		configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/button").click() #en el boton de busqueda
+		noticias_destacadas = ""
 		try:
 			noticias_destacadas = browser.find_element(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div[1]/div[2]/div[2]/div/div/div[1]/g-section-with-header/div[1]/div/title-with-lhs-icon/div[2]/h3").text
 			if noticias_destacadas == "Noticias destacadas":
 				print(noticias_destacadas)
+				try:
+					lista = browser.find_elements(by=By.TAG_NAME, value="g-section-with-header")
+					for i in lista: pass
+						#print(i.get_attribute('innerHTML'))
+				except: print(traceback.format_exc())
 			else: print("no es noticias destacada")
 		except: print("no es noticias destacada")
 
@@ -236,7 +242,6 @@ class NuevaBusquedaClass(View):
 						try: x = di["url"]
 						except:
 							if url not in lista_url: 
-								
 								di["url"] = url
 								di["texto"] = c.text
 								datos.append(di)
@@ -245,7 +250,13 @@ class NuevaBusquedaClass(View):
 				except: print(traceback.format_exc())
 			coun += 1
 
-		
+		print("noticias destacadas")
+		print(noticias_destacadas)
+		if noticias_destacadas == "Noticias destacadas":
+			di = {}
+			di["url"] = "http://noticiasdestacadas.com"
+			di["texto"] = "Noticias destacadas"
+			datos.insert(0,di)
 		f = open("paisesdos.yml", "r")
 		lista_paises = {}
 		for x in f:
