@@ -1,0 +1,1042 @@
+1651970720830	geckodriver	INFO	Listening on 127.0.0.1:53979
+1651970720872	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "56199" "-no-remote" "-profile" "/tmp/rust_mozprofileOi0nye"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651970721493	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOi0nye/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56199/devtools/browser/1c5d3ef7-d7d6-4f38-8f8c-8f65da45a01c
+1651970725581	Marionette	INFO	Listening on port 35315
+1651970725615	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651971078735	geckodriver	INFO	Listening on 127.0.0.1:60031
+1651971078781	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "55723" "-no-remote" "-profile" "/tmp/rust_mozprofilesa5TGF"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651971079279	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilesa5TGF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55723/devtools/browser/6c89f2da-0b9d-4c0f-817d-c511e6b78bdc
+1651971082840	Marionette	INFO	Listening on port 45681
+1651971082994	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651971142480	Marionette	INFO	Stopped listening on port 45681
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651971145434	Marionette	INFO	Stopped listening on port 35315
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651971149697	geckodriver	INFO	Listening on 127.0.0.1:46831
+1651971149739	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "58417" "-no-remote" "-profile" "/tmp/rust_mozprofileELFnrB"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651971150237	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileELFnrB/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58417/devtools/browser/220abf5b-e420-432d-bd71-7acecc995bfa
+1651971153757	Marionette	INFO	Listening on port 37133
+1651971153877	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651971187731	geckodriver	INFO	Listening on 127.0.0.1:43997
+1651971187776	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "60939" "-no-remote" "-profile" "/tmp/rust_mozprofileIdnKhY"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651971188925	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileIdnKhY/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60939/devtools/browser/75ac1210-8eaa-46e3-b86e-70af7e1ca6a2
+1651971192480	Marionette	INFO	Listening on port 33373
+1651971192520	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651971286723	geckodriver	INFO	Listening on 127.0.0.1:43809
+1651971286767	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "54415" "-no-remote" "-profile" "/tmp/rust_mozprofilegfJYbD"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651971287646	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilegfJYbD/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54415/devtools/browser/e4195da4-9af0-42e4-be50-76804f131b8a
+1651971291040	Marionette	INFO	Listening on port 41647
+1651971291219	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651971371451	Marionette	INFO	Stopped listening on port 37133
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651971377090	Marionette	INFO	Stopped listening on port 33373
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1651971400880	geckodriver	INFO	Listening on 127.0.0.1:60757
+1651971400924	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "48995" "-no-remote" "-profile" "/tmp/rust_mozprofilex0nYpp"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651971401436	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilex0nYpp/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48995/devtools/browser/04cb55fa-d0ac-49a7-9075-47c0e7aac34a
+1651971404913	Marionette	INFO	Listening on port 39917
+1651971404947	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651971407963	Marionette	INFO	Stopped listening on port 39917
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.error: "Could not load engine amazondotcom@search.mozilla.org: Error: Unable to arm timer, the object has been finalized."
+console.error: "Could not load engine wikipedia@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine bing@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine ddg@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.warn: SearchService: "_init: abandoning init due to shutting down"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: uncaught exception: 2147500036
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651971425465	geckodriver	INFO	Listening on 127.0.0.1:58197
+1651971425516	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "58423" "-no-remote" "-profile" "/tmp/rust_mozprofileQLoi1y"
+*** You are running in headless mode.
+1651971425789	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQLoi1y/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58423/devtools/browser/683f7a71-0824-40a2-bc5c-fc3c1fa6a5e0
+1651971429341	Marionette	INFO	Listening on port 33913
+1651971429441	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 898: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+RunWatchdog: Mainthread nested event loops during hang: 
+ --- (no nested event loop active)
+ExceptionHandler::GenerateDump cloned child ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+66928
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+1651971508162	Marionette	INFO	Stopped listening on port 41647
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651972374355	geckodriver	INFO	Listening on 127.0.0.1:51833
+1651972374399	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "60475" "-no-remote" "-profile" "/tmp/rust_mozprofilefJMDO2"
+*** You are running in headless mode.
+1651972374656	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefJMDO2/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60475/devtools/browser/fe64d2d9-262e-49df-947e-bf4a8e19c018
+1651972378322	Marionette	INFO	Listening on port 32815
+1651972378477	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651972448341	geckodriver	INFO	Listening on 127.0.0.1:44787
+1651972448391	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "42327" "-no-remote" "-profile" "/tmp/rust_mozprofiledHdOe7"
+*** You are running in headless mode.
+1651972448725	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiledHdOe7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:42327/devtools/browser/983de403-0607-4b07-8d7c-5b5565f93dc8
+1651972452310	Marionette	INFO	Listening on port 41697
+1651972452517	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651972609846	geckodriver	INFO	Listening on 127.0.0.1:56429
+1651972609892	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "38497" "-no-remote" "-profile" "/tmp/rust_mozprofileSGvgWE"
+*** You are running in headless mode.
+1651972610145	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSGvgWE/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38497/devtools/browser/a0251884-d123-453d-9203-4c493921b45d
+1651972613908	Marionette	INFO	Listening on port 39349
+1651972614048	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651972641970	geckodriver	INFO	Listening on 127.0.0.1:37853
+1651972642011	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "35651" "-no-remote" "-profile" "/tmp/rust_mozprofileahmgX0"
+*** You are running in headless mode.
+1651972642440	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileahmgX0/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:35651/devtools/browser/5f3850e5-3486-4a6f-bc0f-ff7c41b372da
+1651972645734	Marionette	INFO	Listening on port 36065
+1651972646082	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651972814216	geckodriver	INFO	Listening on 127.0.0.1:52317
+1651972814260	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "40629" "-no-remote" "-profile" "/tmp/rust_mozprofileH2THix"
+*** You are running in headless mode.
+1651972814573	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileH2THix/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40629/devtools/browser/6d38eeab-d43c-4619-8e97-874fe368c022
+1651972818336	Marionette	INFO	Listening on port 40243
+1651972818535	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651972884651	geckodriver	INFO	Listening on 127.0.0.1:56885
+1651972884695	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "48201" "-no-remote" "-profile" "/tmp/rust_mozprofileu7lbgA"
+*** You are running in headless mode.
+1651972885005	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileu7lbgA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48201/devtools/browser/5af54c11-84ec-402d-a454-25f15be458c9
+1651972891000	Marionette	INFO	Listening on port 39469
+1651972891026	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651972952361	geckodriver	INFO	Listening on 127.0.0.1:52675
+1651972952539	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "45189" "-no-remote" "-profile" "/tmp/rust_mozprofileon8BiZ"
+*** You are running in headless mode.
+1651972952949	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileon8BiZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:45189/devtools/browser/d939549b-3cfb-4feb-82b5-cadcd40f0744
+1651972957352	Marionette	INFO	Listening on port 41707
+1651972957375	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651973019997	geckodriver	INFO	Listening on 127.0.0.1:49949
+1651973020059	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "33663" "-no-remote" "-profile" "/tmp/rust_mozprofilebAvFES"
+*** You are running in headless mode.
+1651973020760	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilebAvFES/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33663/devtools/browser/bd94f138-718f-4bc1-9e7d-5a94d51dc2dc
+1651973026103	Marionette	INFO	Listening on port 44805
+1651973026197	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1651973088003	geckodriver	INFO	Listening on 127.0.0.1:41963
+1651973088086	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "47121" "-no-remote" "-profile" "/tmp/rust_mozprofilerEmQCK"
+*** You are running in headless mode.
+1651973089473	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilerEmQCK/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47121/devtools/browser/0640f451-d4e0-4b6a-9a42-9bd616ec4806
+1651973093302	Marionette	INFO	Listening on port 37927
+1651973093482	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651973179128	geckodriver	INFO	Listening on 127.0.0.1:44775
+1651973179171	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "47743" "-no-remote" "-profile" "/tmp/rust_mozprofilejvexzQ"
+*** You are running in headless mode.
+1651973179508	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilejvexzQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47743/devtools/browser/8a2728b7-7bf1-450e-bd62-61d4fe08c64b
+1651973183324	Marionette	INFO	Listening on port 44581
+1651973183437	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651973245318	geckodriver	INFO	Listening on 127.0.0.1:32963
+1651973245446	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "49225" "-no-remote" "-profile" "/tmp/rust_mozprofilesEEbiU"
+*** You are running in headless mode.
+1651973246002	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilesEEbiU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49225/devtools/browser/384aca6b-18f1-4c6f-8a71-fdc626707efa
+1651973249931	Marionette	INFO	Listening on port 45185
+1651973250033	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651973286664	geckodriver	INFO	Listening on 127.0.0.1:43563
+1651973286734	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "36007" "-no-remote" "-profile" "/tmp/rust_mozprofilebwO03O"
+*** You are running in headless mode.
+1651973287058	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilebwO03O/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36007/devtools/browser/443c6ab8-1377-49b6-9ea8-29937e00a4b4
+1651973291067	Marionette	INFO	Listening on port 36091
+1651973291216	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651973340610	geckodriver	INFO	Listening on 127.0.0.1:58161
+1651973340659	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "58701" "-no-remote" "-profile" "/tmp/rust_mozprofileqBfwdh"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651973342253	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqBfwdh/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58701/devtools/browser/af025c4b-6569-4018-a094-1fa4c33b986c
+1651973351409	Marionette	INFO	Listening on port 42241
+1651973351551	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1651973408638	Marionette	INFO	Stopped listening on port 42241
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651975253221	geckodriver	INFO	Listening on 127.0.0.1:38817
+1651975253336	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "48015" "-no-remote" "-profile" "/tmp/rust_mozprofilejc3fQR"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651975254114	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilejc3fQR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48015/devtools/browser/9c1f3aa2-c2a9-4579-826e-694bb67806c8
+1651975258011	Marionette	INFO	Listening on port 40631
+1651975258254	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+1651975424076	geckodriver	INFO	Listening on 127.0.0.1:49575
+1651975424123	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "50951" "-no-remote" "-profile" "/tmp/rust_mozprofilemTyvkZ"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651975424950	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilemTyvkZ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50951/devtools/browser/fe90031f-68ec-48ec-be43-143872e2e349
+1651975429611	Marionette	INFO	Listening on port 33065
+1651975429672	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1651975439519	Marionette	INFO	Stopped listening on port 33065
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PHttpChannel::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651975533232	Marionette	INFO	Stopped listening on port 40631
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1651975706080	geckodriver	INFO	Listening on 127.0.0.1:46965
+1651975706148	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "58645" "-no-remote" "-profile" "/tmp/rust_mozprofileADa4YA"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651975706902	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileADa4YA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58645/devtools/browser/514241a3-ae69-4fcf-a22b-ecf9490137fd
+1651975711359	Marionette	INFO	Listening on port 44935
+1651975711380	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1651975711489	Marionette	INFO	Stopped listening on port 44935
+JavaScript error: resource://activity-stream/lib/ActivityStreamPrefs.jsm, line 27: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIPrefBranch.removeObserver]
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://activity-stream/lib/PlacesFeed.jsm, line 178: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsINavBookmarksService.addObserver]
+JavaScript error: resource://gre/modules/JSONFile.jsm, line 138: AbortError: IOUtils.profileBeforeChange getter: IOUtils: profileBeforeChange phase has already finished
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+JavaScript error: resource://gre/modules/JSONFile.jsm, line 186: Error: Data is not ready.
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+JavaScript error: , line 0: AbortError: A request was aborted, for example through a call to IDBTransaction.abort.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651975726869	geckodriver	INFO	Listening on 127.0.0.1:41771
+1651975726932	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "38831" "-no-remote" "-profile" "/tmp/rust_mozprofile2qMGhU"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651975728519	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile2qMGhU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38831/devtools/browser/e68479e3-628c-495e-bcf2-b7e2000e218d
+1651975732325	Marionette	INFO	Listening on port 35169
+1651975732672	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+1651975740856	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.js:235:19
+TimedPromise@chrome://remote/content/marionette/sync.js:220:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.js:431:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.js:179:31
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+1651975753723	Marionette	INFO	Stopped listening on port 35169
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 898: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+RunWatchdog: Mainthread nested event loops during hang: 
+ --- (no nested event loop active)
+ExceptionHandler::GenerateDump cloned child ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+77797
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+1651975779200	geckodriver	INFO	Listening on 127.0.0.1:46985
+1651975779225	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "46305" "-no-remote" "-profile" "/tmp/rust_mozprofileAbAO37"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651975779854	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAbAO37/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46305/devtools/browser/94dd80d4-8904-44e6-87c9-6f5091349cb8
+1651975783672	Marionette	INFO	Listening on port 39891
+1651975783749	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651975909178	Marionette	INFO	Stopped listening on port 39891
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651975914061	geckodriver	INFO	Listening on 127.0.0.1:35035
+1651975914108	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "44499" "-no-remote" "-profile" "/tmp/rust_mozprofileNBPDh7"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651975914654	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileNBPDh7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:44499/devtools/browser/4ceeda72-d848-4922-850b-65f65c164264
+1651975918364	Marionette	INFO	Listening on port 37767
+1651975918478	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651975932757	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651976027821	Marionette	INFO	Stopped listening on port 37767
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651976030721	geckodriver	INFO	Listening on 127.0.0.1:41333
+1651976030763	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "58805" "-no-remote" "-profile" "/tmp/rust_mozprofileISgt5F"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976031303	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileISgt5F/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58805/devtools/browser/b20a278b-8500-4da8-a7ba-a1be8fe363d4
+1651976034865	Marionette	INFO	Listening on port 45475
+1651976034902	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976044095	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651976130021	Marionette	INFO	Stopped listening on port 45475
+1651976134674	geckodriver	INFO	Listening on 127.0.0.1:50905
+1651976134719	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "43339" "-no-remote" "-profile" "/tmp/rust_mozprofileyCZeSk"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976135229	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyCZeSk/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43339/devtools/browser/b01c5e00-f0af-4199-b2d0-2c94abbae36d
+1651976138737	Marionette	INFO	Listening on port 41847
+1651976138874	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976147367	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651976185244	Marionette	INFO	Stopped listening on port 41847
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651976195238	geckodriver	INFO	Listening on 127.0.0.1:53445
+1651976195384	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "33623" "-no-remote" "-profile" "/tmp/rust_mozprofileQSAmUP"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976195961	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQSAmUP/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33623/devtools/browser/da382052-5325-46be-b466-9448770e8c36
+1651976199658	Marionette	INFO	Listening on port 40485
+1651976199922	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+JavaScript error: https://eyewatch.slack.com/?redir=%2Fgantry%2Fauth%3Fapp%3Dclient%26lc%3D1651976204%26return_to%3D%252Fclient%252FT02HHSVG2%252FD01FHNA0PN0%26teams%3D, line 118: Error: Permission denied to access property "srcElement"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976212536	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651976328730	Marionette	INFO	Stopped listening on port 40485
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651976334237	geckodriver	INFO	Listening on 127.0.0.1:36145
+1651976334340	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "56281" "-no-remote" "-profile" "/tmp/rust_mozprofileeeZhNg"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976334852	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileeeZhNg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56281/devtools/browser/c6c2c1ef-2092-4529-8325-0fddd396c6d3
+1651976338465	Marionette	INFO	Listening on port 45745
+1651976338619	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976350254	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651976461520	Marionette	INFO	Stopped listening on port 45745
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651976466042	geckodriver	INFO	Listening on 127.0.0.1:33599
+1651976466102	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "48851" "-no-remote" "-profile" "/tmp/rust_mozprofileml3nep"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976466725	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileml3nep/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48851/devtools/browser/d46e5173-b2c1-4638-a5e5-ae3387d9f2b7
+1651976470325	Marionette	INFO	Listening on port 36163
+1651976470489	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976485883	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651976572287	geckodriver	INFO	Listening on 127.0.0.1:38953
+1651976572331	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "59215" "-no-remote" "-profile" "/tmp/rust_mozprofileWaHDww"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976572843	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWaHDww/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59215/devtools/browser/fcb537b9-9219-423a-8acb-30bb71c86f48
+1651976577013	Marionette	INFO	Listening on port 34473
+1651976577225	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: "Error while destroying front:" "inspector" (new Error("Connection closed, pending request to server0.conn0.windowGlobal2147483681/inspectorActor4, type getWalker failed\n\nRequest stack:\nrequest@resource://devtools/shared/protocol/Front.js:292:14\ngenerateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:46:19\n_getWalker@resource://devtools/client/fronts/inspector.js:90:30\ninitialize@resource://devtools/client/fronts/inspector.js:79:12\n", "resource://devtools/shared/protocol/Front.js", 106))
+console.error: "Failed to start [root-node] legacy listener for target null" (new Error("Connection closed, pending request to server0.conn0.windowGlobal2147483681/inspectorActor4, type getWalker failed\n\nRequest stack:\nrequest@resource://devtools/shared/protocol/Front.js:292:14\ngenerateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:46:19\n_getWalker@resource://devtools/client/fronts/inspector.js:90:30\ninitialize@resource://devtools/client/fronts/inspector.js:79:12\n", "resource://devtools/shared/protocol/Front.js", 106))
+JavaScript error: resource://devtools/shared/protocol/Front.js, line 106: Error: Connection closed, pending request to server0.conn0.windowGlobal2147483681/inspectorActor4, type getWalker failed
+
+Request stack:
+request@resource://devtools/shared/protocol/Front.js:292:14
+generateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:46:19
+_getWalker@resource://devtools/client/fronts/inspector.js:90:30
+initialize@resource://devtools/client/fronts/inspector.js:79:12
+
+1651976587249	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651976634340	Marionette	INFO	Stopped listening on port 36163
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651976636474	Marionette	INFO	Stopped listening on port 34473
+1651976639176	geckodriver	INFO	Listening on 127.0.0.1:39903
+1651976639279	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "45411" "-no-remote" "-profile" "/tmp/rust_mozprofile8WfQHB"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976640587	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile8WfQHB/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:45411/devtools/browser/53a5dfca-e511-4a48-b23e-ab8a89614359
+1651976644407	Marionette	INFO	Listening on port 37959
+1651976644582	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976658078	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651976707171	geckodriver	INFO	Listening on 127.0.0.1:33773
+1651976707216	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "37969" "-no-remote" "-profile" "/tmp/rust_mozprofileDDtALf"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976707749	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDDtALf/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:37969/devtools/browser/cde1f509-f1ef-4e49-81ed-ccb8d71b4767
+1651976711816	Marionette	INFO	Listening on port 45895
+1651976711853	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976720038	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651976750342	Marionette	INFO	Stopped listening on port 45895
+1651976753374	Marionette	INFO	Stopped listening on port 37959
+1651976758255	geckodriver	INFO	Listening on 127.0.0.1:35485
+1651976758304	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "49051" "-no-remote" "-profile" "/tmp/rust_mozprofileYjcpdH"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651976758824	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYjcpdH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49051/devtools/browser/9bff329e-82c6-40d6-ba99-97ffd81daabd
+1651976762426	Marionette	INFO	Listening on port 36669
+1651976762573	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651976776268	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651976838392	Marionette	INFO	Stopped listening on port 36669
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651977021925	geckodriver	INFO	Listening on 127.0.0.1:39115
+1651977021967	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "40673" "-no-remote" "-profile" "/tmp/rust_mozprofilehMdGUP"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651977022783	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehMdGUP/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40673/devtools/browser/4f21d733-c35b-40c1-bbf8-4854f24422d9
+1651977026610	Marionette	INFO	Listening on port 46723
+1651977026758	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651977035411	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651977092346	Marionette	INFO	Stopped listening on port 46723
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651977096475	geckodriver	INFO	Listening on 127.0.0.1:41829
+1651977096523	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "40131" "-no-remote" "-profile" "/tmp/rust_mozprofilercUbmM"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651977097151	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilercUbmM/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40131/devtools/browser/e9a41034-38bb-47b9-86e4-7adf64e08d63
+1651977101171	Marionette	INFO	Listening on port 34895
+1651977101301	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651977109877	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651977160822	Marionette	INFO	Stopped listening on port 34895
+1651977162902	geckodriver	INFO	Listening on 127.0.0.1:34981
+1651977162947	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "53283" "-no-remote" "-profile" "/tmp/rust_mozprofilePDEQU3"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651977163463	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePDEQU3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53283/devtools/browser/db24978b-eec9-49ef-a4da-896914e8d615
+1651977167322	Marionette	INFO	Listening on port 34899
+1651977167467	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651977176937	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651977285902	Marionette	INFO	Stopped listening on port 34899
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651977290181	geckodriver	INFO	Listening on 127.0.0.1:40497
+1651977290340	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "58665" "-no-remote" "-profile" "/tmp/rust_mozprofile6HTdzm"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651977290986	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile6HTdzm/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58665/devtools/browser/5c5ce578-fc7f-4da1-a17c-7c8511351d75
+1651977294780	Marionette	INFO	Listening on port 42865
+1651977294871	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651977306156	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651977381025	Marionette	INFO	Stopped listening on port 42865
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651977920980	geckodriver	INFO	Listening on 127.0.0.1:57275
+1651977921103	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "50797" "-no-remote" "-profile" "/tmp/rust_mozprofilek8IuYu"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651977921648	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilek8IuYu/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50797/devtools/browser/7eb379dc-28db-43b5-b485-cc540c5fa108
+1651977925316	Marionette	INFO	Listening on port 34969
+1651977925338	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651977935005	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1651978028074	Marionette	INFO	Stopped listening on port 34969
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651978035587	geckodriver	INFO	Listening on 127.0.0.1:54559
+1651978035702	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "54341" "-no-remote" "-profile" "/tmp/rust_mozprofileY9WyRx"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651978036269	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileY9WyRx/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54341/devtools/browser/300eadc5-6f4c-4184-a852-36e55fff8302
+1651978040073	Marionette	INFO	Listening on port 32823
+1651978040128	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651978049599	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651978099530	geckodriver	INFO	Listening on 127.0.0.1:51105
+1651978099576	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1500,900" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "43819" "-no-remote" "-profile" "/tmp/rust_mozprofileWtDchu"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651978100098	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWtDchu/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43819/devtools/browser/d43bced3-5278-4356-ae17-14a6c64c5f3d
+1651978105135	Marionette	INFO	Listening on port 37503
+1651978105202	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651978117035	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651978141303	Marionette	INFO	Stopped listening on port 37503
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651978143153	Marionette	INFO	Stopped listening on port 32823
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1651978218986	geckodriver	INFO	Listening on 127.0.0.1:43999
+1651978219052	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1500,900" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "43691" "-no-remote" "-profile" "/tmp/rust_mozprofileXVdVF1"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651978219801	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXVdVF1/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43691/devtools/browser/177aa610-5d45-4a35-afdd-7b16550681d7
+1651978223487	Marionette	INFO	Listening on port 42135
+1651978223623	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651978233604	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651978279531	Marionette	INFO	Stopped listening on port 42135
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1651978281395	geckodriver	INFO	Listening on 127.0.0.1:52273
+1651978281422	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1500,900" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "33211" "-no-remote" "-profile" "/tmp/rust_mozprofilevcuuoD"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1651978281940	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevcuuoD/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:33211/devtools/browser/1bb153ca-dd7a-4e48-8fa3-7527575209c8
+1651978285921	Marionette	INFO	Listening on port 40581
+1651978285949	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://app.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://eyewatch.slack.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651978294918	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651978428740	Marionette	INFO	Stopped listening on port 40581
+1652021573647	geckodriver	INFO	Listening on 127.0.0.1:35117
+1652021574658	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "41059" "-no-remote" "-profile" "/tmp/rust_mozprofile3QP0tK"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652021579277	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile3QP0tK/search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 770))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+DevTools listening on ws://localhost:41059/devtools/browser/48460530-d45f-4602-a035-cfbdb40c4f9a
+1652021591892	Marionette	INFO	Listening on port 33119
+1652021592153	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652021612992	Marionette	INFO	Stopped listening on port 33119
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1652022112687	geckodriver	INFO	Listening on 127.0.0.1:37985
+1652022112736	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "57335" "-no-remote" "-profile" "/tmp/rust_mozprofileSDWWyL"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652022113335	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSDWWyL/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57335/devtools/browser/45d15334-2ed9-46e4-be37-b95e4333ef88
+1652022117654	Marionette	INFO	Listening on port 36567
+1652022117826	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652022214941	geckodriver	INFO	Listening on 127.0.0.1:57359
+1652022214988	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "37079" "-no-remote" "-profile" "/tmp/rust_mozprofileWhTVT7"
+*** You are running in headless mode.
+1652022215309	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWhTVT7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:37079/devtools/browser/d492a7af-cf7b-462f-bf5a-a955e10db6db
+1652022219713	Marionette	INFO	Listening on port 39535
+1652022219874	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652022353796	geckodriver	INFO	Listening on 127.0.0.1:58415
+1652022353911	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "47795" "-no-remote" "-profile" "/tmp/rust_mozprofileZ6qwpj"
+*** You are running in headless mode.
+1652022354310	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileZ6qwpj/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47795/devtools/browser/113142b9-a89c-4f2c-8610-5b29416efa56
+1652022359121	Marionette	INFO	Listening on port 44275
+1652022359141	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652022418243	geckodriver	INFO	Listening on 127.0.0.1:44789
+1652022418482	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--headless" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "60375" "-no-remote" "-profile" "/tmp/rust_mozprofileLORpZW"
+*** You are running in headless mode.
+1652022419201	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileLORpZW/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:60375/devtools/browser/730625dc-545b-4a84-895d-d00f392ae570
+1652022423422	Marionette	INFO	Listening on port 36113
+1652022423564	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652022452615	Marionette	INFO	Stopped listening on port 36567
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1652022798428	geckodriver	INFO	Listening on 127.0.0.1:45969
+1652022798475	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "32959" "-no-remote" "-profile" "/tmp/rust_mozprofile81v9nJ"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652022799633	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile81v9nJ/search.json.mozlz4", (void 0)))
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 770))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+DevTools listening on ws://localhost:32959/devtools/browser/2ee6e9b3-8278-424b-bed9-4f5388c8cad2
+1652022806780	Marionette	INFO	Listening on port 43063
+1652022806820	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652023053452	Marionette	INFO	Stopped listening on port 43063
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1652023062797	geckodriver	INFO	Listening on 127.0.0.1:35371
+1652023062854	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "40407" "-no-remote" "-profile" "/tmp/rust_mozprofilecxfzVi"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652023063569	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilecxfzVi/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:40407/devtools/browser/2cb0e1d6-410f-4db2-ac3f-6fe69325e589
+1652023067731	Marionette	INFO	Listening on port 43319
+1652023067782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1652023093837	geckodriver	INFO	Listening on 127.0.0.1:57049
+1652023093892	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "56779" "-no-remote" "-profile" "/tmp/rust_mozprofileSvP5Zt"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652023094720	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileSvP5Zt/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56779/devtools/browser/d84b17f2-7fc0-46a2-875d-f34325277c80
+1652023101563	Marionette	INFO	Listening on port 36815
+1652023101633	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652023158094	geckodriver	INFO	Listening on 127.0.0.1:53659
+1652023158225	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "44733" "-no-remote" "-profile" "/tmp/rust_mozprofile2Wvra9"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652023159577	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile2Wvra9/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:44733/devtools/browser/81f102e3-13a0-458b-a05a-4917831eec58
+1652023165086	Marionette	INFO	Listening on port 37311
+1652023165160	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1652023235885	Marionette	INFO	Stopped listening on port 37311
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1652023238417	Marionette	INFO	Stopped listening on port 36815
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1652023241470	Marionette	INFO	Stopped listening on port 43319
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1652023245000	geckodriver	INFO	Listening on 127.0.0.1:45937
+1652023245234	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "51589" "-no-remote" "-profile" "/tmp/rust_mozprofileGkSXn3"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652023246099	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileGkSXn3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51589/devtools/browser/69309900-77c3-48e6-8f22-afb6d91829a1
+1652023250374	Marionette	INFO	Listening on port 41277
+1652023250473	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1652023330038	geckodriver	INFO	Listening on 127.0.0.1:48189
+1652023330092	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "window-size=1400,600" "--enable-javascript" "--user-agent=\"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0\"" "user-agent={\"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057\"}" "--remote-debugging-port" "47755" "-no-remote" "-profile" "/tmp/rust_mozprofilepU3Qd3"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1652023330673	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilepU3Qd3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47755/devtools/browser/8ea44aeb-d29a-4f6c-91a2-48700ece927b
+1652023334947	Marionette	INFO	Listening on port 40973
+1652023335021	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1652023349557	Marionette	INFO	Stopped listening on port 40973
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

@@ -41,6 +41,17 @@ from .forms import BusquedaForm
 
 from hello.models import Busqueda, ResultadoBusqueda
 
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.by import By
+import traceback
+from fake_useragent import UserAgent
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__).replace("views","")),
@@ -153,75 +164,87 @@ class NuevaBusquedaClass(View):
 		paisesUpper = paises.upper()
 
 		if not paises: paises = "com"
-		USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:65.0) Gecko/20100101 Firefox/65.0"
-		headers = {"user-agent" : USER_AGENT}
-		query = busqueda.replace(' ', '+')
-		if tipobusqueda == "busqueda":
-			if paises != "com":
-				URL = f"https://google.com.{paises}/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
-			else:
-				URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
-		if tipobusqueda == "imagen":
-			URL = f"https://images.google.com/search?q={query}&num=30"
-		if tipobusqueda == "video":
-			URL = f"https://www.google.com/search?tbm=vid&hl=es-UY&source=hp&biw=&bih=&q={query}&num=30&cr=country{paises}"
+		
+		options = Options()
+		options.add_argument("--headless") #para que se abra el navegador 
+		options.add_argument("window-size=1400,600")
+		options.add_argument("--enable-javascript")
+		#options.add_argument("javascript.enabled", True)
+		#options.add_argument("user-agent=[Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0]")
+		options.add_argument('--user-agent="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0"')
+		options.add_argument('user-agent={"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057"}')
+		ua = UserAgent()
+		options.binary_location = '/usr/bin/firefox'
+		#options.binary_location = '/usr/local/firefox/firefox' #server
+		browser = webdriver.Firefox(options=options,executable_path="/usr/local/bin/geckodriver")
+		#browser = webdriver.Firefox(options=options,executable_path="/home/ec2-user/django-search/geckodriver") #server
+		print(browser.execute_script("return navigator.userAgent;"))
+		browser.get('https://www.google.com/preferences?hl=es&prev=https://www.google.com/search?q%3Da%26source%3Dhp%26ei%3DQdhyYtPzCNid5OUPgPaIOA%26iflsig%3DAJiK0e8AAAAAYnLmUXUEeDCkQUeO5LXbRMb41uPPQYC9%26ved%3D0ahUKEwiTmKCizsb3AhXYDrkGHQA7AgcQ4dUDCAY%26uact%3D5%26oq%3Da%26gs_lcp%3DCgdnd3Mtd2l6EAMyDgguEIAEELEDEMcBEKMCMhEILhCABBCxAxCDARDHARDRAzILCAAQgAQQsQMQgwEyCAgAELEDEIMBMggIABCABBCxAzIOCC4QgAQQsQMQxwEQ0QMyCAguELEDEIMBMg4ILhCABBCxAxDHARDRAzIICAAQgAQQsQMyBQguEIAEUABYAGCJBWgAcAB4AIABjwGIAY8BkgEDMC4xmAEAoAEB%26sclient%3Dgws-wiz')
+		browser.implicitly_wait(2)
+		configuracion = browser.find_element(By.ID, "regionanchormore")
+		configuracion.click()
+		browser.implicitly_wait(2)
+		browser.execute_script("document.getElementById('result_slider').setAttribute('aria-valuenow', '20')")
+		print(browser.execute_script("document.getElementById('result_slider').getAttribute('aria-valuenow')"))
+		
+		configuracion = browser.find_element(by=By.CSS_SELECTOR, value="#result_slider")
+		configuracion.click()
+		browser.implicitly_wait(2)
+		configuracion = browser.find_element(by=By.XPATH, value="//div[@class='jfk-radiobutton' and @data-value='{}']".format(paisesUpper))
+		configuracion.click()
+		
+		browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+		browser.implicitly_wait(1)
+		configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/form/div/div[2]/div[2]/div/div[1]")
+		configuracion.click()
+		browser.implicitly_wait(2)
+		configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input").clear() #el search
+		configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input") #
+		configuracion.send_keys(busqueda) #search lacalle pou
+		configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/button").click() #en el boton de busqueda
 		try:
-			resp = requests.get(URL, headers=headers)
-		except:
-			URL = f"https://google.com/search?q={query}&oq={query}&num=30&hl=es&gl={paises}&ie=UTF-8" #&lr=lang_es
-			resp = requests.get(URL, headers=headers)
+			noticias_destacadas = browser.find_element(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div[1]/div[2]/div[2]/div/div/div[1]/g-section-with-header/div[1]/div/title-with-lhs-icon/div[2]/h3").text
+			if noticias_destacadas == "Noticias destacadas":
+				print(noticias_destacadas)
+			else: print("no es noticias destacada")
+		except: print("no es noticias destacada")
 
-		soup = BeautifulSoup(resp.text, "html.parser")
-		count = 1
-		if resp.status_code == 200:
-			soup = BeautifulSoup(resp.content, "html.parser")
-			results = []
-			lista_url = []
-			for g in soup.find_all('g-section-with-header', class_='yG4QQe'):
-				print(" ")
-				print("Noticias destacadas" in g.get_text())
-			for g in soup.find_all('div', class_='g'):
-				#another_page = g.find_all('div', class_='g')
-				#print(" ")
-				#print(g)
-				description = ''
-				anchors = g.find_all('a')
-				for data in g.find_all('div', class_='VwiC3b'):
-					description = data.get_text()
-				if anchors:
-					#title_search = anchors.find('h3')
-					try:
-						#print(anchors)
-						link = anchors[0]['href']
-						for i in anchors:
-							#print(" ")
-							#print(type(i))
-							#d = i.find_all(class_='LC20lb') 
-							#d = i.find_all(attrs={"class" : "LC20lb"})
-							att = dict(i.attrs)
-							#print(" att ")
-							#print(i)
-							if i.h3:
-								if i['href'] not in lista_url:
-									#print(i)
-									#print(i.h3.get_text())
-									#description = i.h3.get_text()
-									#for data in i.find_all('span'):
-									#	description = data.get_text()
-									for data in i.find_all('h3'):
-										title_search = data.get_text()
-									d = {"title": title_search,"url":i['href'],"description":description}
-									if count < 21:
-										results.append(d)
-										lista_url.append(i['href'])
-									count += 1
-							try:
-								if i.h3['class'][0] == "LC20lb": pass
-									#print(i['href'])
-							except: pass
-					except: 
-						print("line 201 error ")
-						print(traceback.format_exc())
+		primer_link = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]")
+		print(" ")
+		#print(primer_link[0])
+		for c in primer_link: pass
+			#print(c.tag_name)
+			#print(c.text)
+		#texto = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/div[1]/div[1]/div/a/h3")
+		texto = browser.find_elements(by=By.CSS_SELECTOR, value=".g")
+		datos = []
+		lista_url = []
+		for c in texto:
+			#print(c.get_attribute('innerHTML'))
+			#print(" ")
+			#print(c.text)
+			lista = c.find_elements(by=By.TAG_NAME, value="a")
+			count,coun = 0,0
+			di = {}
+			for d in lista:
+				url = d.get_attribute("href")
+				if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url:
+					#print("url")
+					#print(url)
+					#print(" ")
+					try: x = di["url"]
+					except:
+						if url not in lista_url: 
+							
+							di["url"] = url
+							di["texto"] = c.text
+							datos.append(di)
+							lista_url.append(url)
+					count += 1
+					
+					#if count == 20: break
+			coun += 1
+
 		
 		f = open("paisesdos.yml", "r")
 		lista_paises = {}
@@ -247,7 +270,7 @@ class NuevaBusquedaClass(View):
 			datos_busqueda = ""
 		
 		return TemplateResponse(request, 'nueva-busqueda.html', {
-			'results': results, 
+			'results': datos, 
 			'lista_paises': lista_paises, 
 			'pais_post': paises,
 			'form': form,
