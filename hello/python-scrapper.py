@@ -19,10 +19,10 @@ options.add_argument("--enable-javascript")
 options.add_argument('--user-agent="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0"')
 options.add_argument('user-agent={"Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057"}')
 ua = UserAgent()
-options.binary_location = '/usr/bin/firefox'
-#options.binary_location = '/usr/local/firefox/firefox' #server
-browser = webdriver.Firefox(options=options,executable_path="/usr/local/bin/geckodriver")
-#browser = webdriver.Firefox(options=options,executable_path="/home/ec2-user/django-search/geckodriver") #server
+#options.binary_location = '/usr/bin/firefox'
+options.binary_location = '/usr/local/firefox/firefox' #server
+#browser = webdriver.Firefox(options=options,executable_path="/usr/local/bin/geckodriver")
+browser = webdriver.Firefox(options=options,executable_path="/home/ec2-user/django-search/geckodriver") #server
 print(browser.execute_script("return navigator.userAgent;"))
 browser.get('https://www.google.com/preferences?hl=es&prev=https://www.google.com/search?q%3Da%26source%3Dhp%26ei%3DQdhyYtPzCNid5OUPgPaIOA%26iflsig%3DAJiK0e8AAAAAYnLmUXUEeDCkQUeO5LXbRMb41uPPQYC9%26ved%3D0ahUKEwiTmKCizsb3AhXYDrkGHQA7AgcQ4dUDCAY%26uact%3D5%26oq%3Da%26gs_lcp%3DCgdnd3Mtd2l6EAMyDgguEIAEELEDEMcBEKMCMhEILhCABBCxAxCDARDHARDRAzILCAAQgAQQsQMQgwEyCAgAELEDEIMBMggIABCABBCxAzIOCC4QgAQQsQMQxwEQ0QMyCAguELEDEIMBMg4ILhCABBCxAxDHARDRAzIICAAQgAQQsQMyBQguEIAEUABYAGCJBWgAcAB4AIABjwGIAY8BkgEDMC4xmAEAoAEB%26sclient%3Dgws-wiz')
 browser.implicitly_wait(5)
