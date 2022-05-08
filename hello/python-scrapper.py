@@ -44,7 +44,7 @@ configuracion.click()
 browser.implicitly_wait(2)
 configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input").clear() #el search
 configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input") #
-configuracion.send_keys('matias tafernaberry') #search lacalle pou
+configuracion.send_keys('lacalle pou') #search lacalle pou
 configuracion = browser.find_element(by=By.XPATH, value="/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/button").click() #en el boton de busqueda
 try:
     noticias_destacadas = browser.find_element(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div[1]/div[2]/div[2]/div/div/div[1]/g-section-with-header/div[1]/div/title-with-lhs-icon/div[2]/h3").text
@@ -67,27 +67,31 @@ lista_url = []
 for c in texto:
     #print(c.get_attribute('innerHTML'))
     #print(" ")
+    #if noticias_destacadas == "Noticias destacadas": continue
     #print(c.text)
     lista = c.find_elements(by=By.TAG_NAME, value="a")
     count,coun = 0,0
     di = {}
     for d in lista:
+        print(d.get_attribute('innerHTML'))
         url = d.get_attribute("href")
-        if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url:
-            #print("url")
-            #print(url)
-            #print(" ")
-            try: x = di["url"]
-            except:
-                if url not in lista_url: 
-                    
-                    di["url"] = url
-                    di["texto"] = c.text
-                    datos.append(di)
-                    lista_url.append(url)
-            count += 1
-            
-            #if count == 20: break
+        try:
+            if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url:
+                #print("url")
+                #print(url)
+                #print(" ")
+                try: x = di["url"]
+                except:
+                    if url not in lista_url: 
+                        
+                        di["url"] = url
+                        di["texto"] = c.text
+                        datos.append(di)
+                        lista_url.append(url)
+                count += 1
+                
+                #if count == 20: break
+        except: print(traceback.format_exc())
     coun += 1
     #if coun == 20: break
 
