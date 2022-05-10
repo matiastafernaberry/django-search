@@ -184,7 +184,7 @@ class NuevaBusquedaClass(View):
 		configuracion = browser.find_element(By.ID, "regionanchormore")
 		configuracion.click()
 		browser.implicitly_wait(2)
-		browser.execute_script("document.getElementById('result_slider').setAttribute('aria-valuenow', '20')")
+		browser.execute_script("document.getElementById('result_slider').setAttribute('aria-valuenow', '40')")
 		print(browser.execute_script("document.getElementById('result_slider').getAttribute('aria-valuenow')"))
 		
 		configuracion = browser.find_element(by=By.CSS_SELECTOR, value="#result_slider")
