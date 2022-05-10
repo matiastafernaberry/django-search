@@ -206,7 +206,7 @@
     console.log("lista");
     console.log(lista);
     console.log(datosBusqueda);
-    $('#guardar-evaluaciones').append('<img src="static/load.gif" alt="" width="50" height="60" >');
+    $('#guardar-evaluaciones').html("Guardando ...");
     
     $.ajax({
         type: "POST",
@@ -226,7 +226,7 @@
   }
   $("#guardar-evaluaciones").click(function() {
     saveEvalucaion();
-    $("button").prop("disabled", false);
+    $(this).prop("disabled", false);
   });
   //saveEvalucaion();
   </script>
