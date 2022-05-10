@@ -35,7 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&display=swap" rel="stylesheet"> 
     
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!--link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"-->
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.min.js"
 			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -44,39 +44,30 @@
         body{
   background-color: #a5a582;
   background-color: #fff;
-  background-color: #fff;
+  
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
+  font: 1em/1.85em 'Open Sans', "Arial", sans-serif;
 }
-img{
-  /*max-width: 80%;
-  min-width: 80%;
 
-  -webkit-filter: drop-shadow(8px 8px 10px gray); /* Safari 6.0 - 9.0 */
-  /*filter: drop-shadow(8px 8px 10px gray);
-
-  -webkit-filter: sepia(10%) grayscale(10%) brightness(110%) contrast(110%);  /* Safari */
-  /*filter: sepia(10%) grayscale(10%) brightness(110%) contrast(110%);
-  
-
-  -webkit-box-shadow: 22px 27px 61px -21px rgba(70, 55, 11, 0.85);
-  -moz-box-shadow: 22px 27px 61px -21px rgba(70, 55, 11, 0.85);
-  box-shadow: 22px 27px 61px -21px rgba(70, 55, 11, 0.85);
-
-  -ms-transform: skewY(20deg); /* IE 9 */
-  /*-webkit-transform: skewY(-10deg); /* Safari 3-8 */
-  /*transform: skewY(-5deg);*/
-      background-color: black;
-    /* transform: skewY(
--5deg
-); */
-    width: 39%;
-    border-radius: 50px;
-}
 img:hover{
   transform: skewY(0deg);
 }
-
+.table-head{
+  background-color: #e7ad36;
+}
+.btn-eye{
+  background-color: #e7ad36;
+  border-color: #e7ad36;
+  padding: 0.7rem;
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.form-control, .form-check-input, .custom-select{
+  border: 1px solid #e7ad36;
+}
 .container{
   margin-top: 2rem;
 }
@@ -91,7 +82,13 @@ img:hover{
   padding-bottom: 2rem;
 }
 .items-search{
-  padding-top: 3rem;
+  padding: 1rem;
+  border: 1px solid #e7ad36;
+  border-bottom: 0px;
+  border-radius: 10px 10px 0px 0px;
+}
+.table-bordered{
+  border: 1px solid #e7ad36;
 }
 .link-url{
   color: #007bff;
@@ -149,12 +146,9 @@ img:hover{
 
 .navbar{
   padding-bottom: 1rem;
+  background-color: #f89d31;
 }
-.navbar{
-  box-shadow: 8px 19px 34px -9px rgba(0,0,0,0.36);
--webkit-box-shadow: 8px 19px 34px -9px rgba(0,0,0,0.36);
--moz-box-shadow: 8px 19px 34px -9px rgba(0,0,0,0.36);
-}
+
 .col-sm-4{
   padding: 3rem;
   
@@ -312,33 +306,26 @@ input[type=radio] {
   background:gray;
 }
 .guardar-evaluciones{
+    color:#000;
     padding: 1rem;
     border-radius: 2rem;
-    background-color: #e50a0a;
-    border-color: red;
-    margin-top: 4rem;
+    background-color: #f89d31;
+    border-color: #f89d31;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+}
+.guardar-evaluciones:hover{
+    color:#000;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: #e27b1f;
+    border-color: #e27b1f;
+    margin-top: 2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-body{
-  background-color: #a5a582;
-  background-color: #fff;
-  background-color: #fff;
-  font-size: 14px;
-
-}
 img{
   /*max-width: 80%;
   min-width: 80%;
@@ -362,7 +349,7 @@ img{
 -5deg
 ); */
     width: 39%;
-    border-radius: 50px;
+   
 }
 img:hover{
   transform: skewY(0deg);
@@ -597,13 +584,11 @@ input[type=radio] {
 .radiob-gray:checked:before {
   background:gray;
 }
-.guardar-evaluciones{
-    padding: 1rem;
-    border-radius: 2rem;
-    background-color: #e50a0a;
-    border-color: red;
-    margin-top: 4rem;
+.table-bordered td, .table-bordered th {
+  border: 1px solid #f89d31;
 }
+
+
     </style>
     <base href="/" target="_self">
 </head>

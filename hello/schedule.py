@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+from datetime import datetime
+import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
@@ -13,11 +14,13 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import gtts
 from playsound import playsound
+import os
 
-def main():
+
+def slack():
     options = Options()
-    #options.add_argument("--headless") #para que se abra el navegador 
-    options.add_argument("window-size=1500,900")
+    #options.add_argument("--headless") #para que no se abra el navegador 
+    #options.add_argument("window-size=1500,900")
     options.add_argument("--enable-javascript")
     #options.add_argument("javascript.enabled", True)
     #options.add_argument("user-agent=[Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0]")
@@ -30,12 +33,14 @@ def main():
     #browser = webdriver.Firefox(options=options,executable_path="/home/ec2-user/django-search/geckodriver") #server
     print(browser.execute_script("return navigator.userAgent;"))
     browser.get('https://app.slack.com/client/T02HHSVG2/D01FHNA0PN0')
-    browser.implicitly_wait(2)
+    browser.maximize_window()
+    browser.implicitly_wait(4)
     #ql-editor
     dominio = browser.find_element(By.CSS_SELECTOR, value="#domain")
     dominio.send_keys('eyewatch.slack.com')
     dominio = browser.find_element(By.CSS_SELECTOR, value=".c-button")
     dominio.click()
+    browser.implicitly_wait(1)
     dominio = browser.find_element(By.CSS_SELECTOR, value="#email")
     dominio.send_keys('mtafernaberry@eyewatch.me')
     dominio = browser.find_element(By.CSS_SELECTOR, value="#password")
@@ -57,7 +62,6 @@ def main():
         print("si boton")
     except:
         print("no boton")
-
     browser.implicitly_wait(1)
     browser.find_element(By.CSS_SELECTOR, value=".ql-editor").clear()
     dominio = browser.find_element(By.CSS_SELECTOR, value=".ql-editor")
@@ -70,10 +74,22 @@ def main():
         dominio.click()
     dominio = browser.find_element(By.CSS_SELECTOR, value=".c-wysiwyg_container__suffix")
     dominio.click()
-
     browser.implicitly_wait(55)
     #browser.quit()
 
 
+def main():
+    while True:
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        clear = lambda: os.system('clear')
+        clear()
+        print(current_time)
+        
+        time.sleep(1)
+        if current_time == "10:10:10":
+            slack()
+
+        
 if __name__ == "__main__":
     main()

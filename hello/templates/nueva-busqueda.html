@@ -18,27 +18,27 @@
           <div class="formulario col-sm-6">
             <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data">
               <div class="form-group">
-                <label for="exampleInputEmail1">Proyecto</label>
-                <input type="hidden" name="pais" maxlength="100" required="" id="id_pais_hidden" class="form-control" value="{{pais}}">
+                <!--label for="exampleInputEmail1">Proyecto</label-->
+                <input type="hidden" name="pais" maxlength="100" required="" id="id_pais_hidden" class="form-control" value="{{pais}}" placeholder="Proyecto">
                 {% if proyecto %}
-                  <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control" value="{{proyecto}}">
+                  <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control" value="{{proyecto}}" placeholder="Proyecto">
                 {% else %}
-                  <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control">
+                  <input type="text" name="proyecto" maxlength="100" required="" id="id_proyecto" class="form-control" placeholder="Proyecto">
                 {% endif %}
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Búsqueda</label>
+                <!--label for="exampleInputPassword1">Búsqueda</label-->
                 {% if busqueda %}
-                  <input type="text" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda" value="{{busqueda}}"> 
+                  <input type="text" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda" value="{{busqueda}}" placeholder="Búsqueda"> 
                 {% else %}
-                  <input type="text" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda">
+                  <input type="text" name="busqueda" maxlength="100" required="" class="form-control" id="id_busqueda" placeholder="Búsqueda">
                 {% endif %}
                 <!--input type="text" class="form-control" id="busqueda" name="busqueda"-->
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Tipo de Búsqueda</label>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios1" value="busqueda" checked>
+                  <input class="form-check-input" type="radio" name="tipobusqueda" id="exampleRadios1" value="busqueda" checked placeholder="Tipo de Búsqueda">
                   <label class="form-check-label" for="exampleRadios1">
                     Búsqueda
                   </label>
@@ -57,52 +57,47 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Pais</label>
+                <!--label for="exampleInputPassword1">Pais</label-->
                 {% if lista_paises %}
-                  <select class="custom-select mr-sm-2" id="id_paises" name="paises">
-                    <option selected value="">Choose...</option>
+                  <select class="custom-select mr-sm-2" id="id_paises" name="paises" placeholder="Pais">
+                    <option selected value="">Pais</option>
                     {% for key, value in lista_paises.items %}  
                       <option value="{{value}}">{{key}}</option>
                     {% endfor %}
                   </select>
                 {% endif %}
               </div>
-              <button type="submit" class="btn btn-primary">Búsqueda</button>
+              <button type="submit" class="btn  btn-eye guardar-evaluciones">Búsqueda</button>
             </form>
         </div>
         <div class="col-sm-3">&nbsp;</div>
       </div>
-      <hr>
+    
         {% if results %}
-        <input id="pais_result" type="hidden" value="{{pais_post}}">
-
-        <div class="row resultado-busqueda">
-          <div class="col-sm-2"><h3></h3></div>
-          <div class="col-sm-8"><h3>Contenido</h3></div>
-          <div class="col-sm-2"><h3>Evalución</h3></div>
-        </div>
-          {% for item in results %}
-            <div class="items-search">
-              <div class="row">
-                <div class="col-sm-10" id="div-url-{{ forloop.counter0 }}" data="{{item.url}}">
-                  {{ forloop.counter }} -
-                  <a href="{{item.url}}" target="_blank">{{item.url}}</a>
-                </div>
-                <div class="col-sm-2">&nbsp;</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-10" id="div-title-{{ forloop.counter0 }}" data="{{item.title}}">
-                  <h5 class="link-url">
-                    {{item.title}}
-                  </h5>
-                </div>
-                <div class="col-sm-2">&nbsp;</div>
-              </div>
-              <div class="row">
-                <div class="col-sm-10" id="div-description-{{ forloop.counter0 }}" data="{{item.description}}">
-                  <span>{{item.texto}}</span>
-                </div>
-                <div class="col-sm-1"> 
+          <input id="pais_result" type="hidden" value="{{pais_post}}">
+          
+          <table class="table table-bordered">
+            <thead class="table-head">
+              <tr>
+                <th colspan="7">Contenido</th>
+                <th colspan="2">Evalución</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in results %}
+              <tr>
+                <td colspan="7">
+                  <div class="col-sm-10" id="div-url-{{ forloop.counter0 }}" data="{{item.url}}">
+                    <span style="color:#e07b1e">{{ forloop.counter }}</span> -
+                    <a href="{{item.url}}" target="_blank">{{item.url}}</a>
+                  </div>
+                  <p>
+                    <div class="col-sm-10" id="div-description-{{ forloop.counter0 }}" data="{{item.description}}">
+                      <span>{{item.texto}}</span>
+                    </div>
+                  </p>
+                </td>
+                <td colspan="2">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input radiob-black" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio1{{ forloop.counter0 }}" value="sinevaluar" checked>
                   </div>
@@ -115,33 +110,25 @@
                   <div class="form-check form-check-inline">
                     <input class="form-check-input radiob-red" type="radio" name="{{ forloop.counter0 }}" id="inlineRadio4{{ forloop.counter0 }}" value="desfavorable">
                   </div>
-                </div>
-              </div>
-            </div>
-            <!-- The Modal -->
-            <div id="{{ forloop.counter0 }}" class="modal">
-              <!-- Modal content -->
-              <form action="nueva-busqueda/" method="post" id="remember" enctype="multipart/form-data"></form>
-                <div class="modal-content">
-                  <span class="close" onclick="closeModal({{ forloop.counter0 }})">&times;</span>
-                  <input type="hidden" id="id_busqueda" value="{{item.url}}">
-                  <input type="hidden" id="id_title" value="{{item.title}}">
-                  <input type="hidden" id="id_description" value="{{item.description}}">
-                  <p>{{item.url}}</p>
-                  <p>{{item.title}}</p>
-                  <p>{{item.description}}</p>
-                </div>
-              </form>
-            </div>
-          {% endfor %}
+                </td>
+              </tr>
+              <input type="hidden" id="busquedaurl{{ forloop.counter0 }}" value="{{ item.url }}">
+              {% endfor %}
+            </tbody>
+          </table>
+        
         <div class="row resultado-busqueda">
           <div class="col-sm-12 text-center">
-            <button type="button" class="btn btn-primary guardar-evaluciones" id="guardar-evaluaciones">
-              Guardar Resultados
+            <button type="button" class="btn  guardar-evaluciones" id="guardar-evaluaciones">
+              Guardar Evaluaciones
             </button>
           </div>
         </div>
         {% endif %}
+        {% for item in datos_busqueda %}
+          <input type="hidden" id="datosurl{{ forloop.counter0 }}" value="{{ item.url }}">
+          <input type="hidden" id="datosevaluacion{{ forloop.counter0 }}" value="{{ item.evaluacion }}">
+        {% endfor %}
         <div class="row resultado-busqueda">
           <div class="col-sm-10">&nbsp;</div>
           <div class="col-sm-2">&nbsp;</div>
@@ -156,6 +143,32 @@
     console.log('load');
     if($('#pais_result').val()){
       $('#id_paises option[value='+$('#pais_result').val()+']').attr('selected','selected');
+    }
+    var datos = new Array();
+    for (i = 0; i < 21; i++) {
+        datos[$('#datosurl'+i).val()] = $('#datosevaluacion'+i).val();
+    }
+    console.log('datos evaluacion');
+    console.log(datos);
+    for (i = 0; i < 21; i++) {
+        prop = $('#busquedaurl'+i).val();
+        if (datos.hasOwnProperty(prop)){
+            console.log(datos[prop]);
+            if (datos[prop] == 'sinevaluar'){
+                $("#inlineRadio1"+i).prop("checked", true);
+            }
+            if (datos[prop] == 'favorable'){
+                $("#inlineRadio2"+i).prop("checked", true);
+            }
+            if (datos[prop] == 'neutral'){
+                $("#inlineRadio3"+i).prop("checked", true);
+            }
+            if (datos[prop] == 'desfavorable'){
+                $("#inlineRadio4"+i).prop("checked", true);
+            }
+
+        }
+        
     }
   });
   function openModal(id){

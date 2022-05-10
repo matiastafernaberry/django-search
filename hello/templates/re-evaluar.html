@@ -67,7 +67,7 @@
                   </select>
                 {% endif %}
               </div>
-              <button type="submit" class="btn btn-primary">Búsqueda</button>
+              <button type="submit" class="btn  btn-eye guardar-evaluciones">Búsqueda</button>
               {% for item in datos_busqueda %}
                 <input type="hidden" id="datosurl{{ forloop.counter0 }}" value="{{ item.url }}">
                 <input type="hidden" id="datosevaluacion{{ forloop.counter0 }}" value="{{ item.evaluacion }}">
@@ -163,7 +163,7 @@
     for (i = 0; i < 21; i++) {
         prop = $('#busquedaurl'+i).val();
         if (datos.hasOwnProperty(prop)){
-            console.log();
+            //console.log();
             if (datos[prop] == 'sinevaluar'){
                 $("#inlineRadio1"+i).prop("checked", true);
             }

@@ -166,7 +166,7 @@ class NuevaBusquedaClass(View):
 		if not paises: paises = "com"
 		
 		options = Options()
-		#options.add_argument("--headless") #para que se abra el navegador 
+		options.add_argument("--headless") #para que se abra el navegador 
 		options.add_argument("window-size=1400,600")
 		options.add_argument("--enable-javascript")
 		#options.add_argument("javascript.enabled", True)
@@ -214,11 +214,27 @@ class NuevaBusquedaClass(View):
 				except: print(traceback.format_exc())
 			else: print("no es noticias destacada")
 		except: print("no es noticias destacada")
+		try:
+			video = browser.find_elements(by=By.CSS_SELECTOR, value=".iJ1Kvb")
+			for i in video:
+				#print(i.text)
+				if i.text == "Videos": print("Videos")	
+		except: print(traceback.format_exc())
+		try:
+			posicion_video = browser.find_elements(by=By.CSS_SELECTOR, value="#rso")
+			print("posicion video")
+			for i in posicion_video:
+				#print(i.get_attribute('innerHTML'))
+				videos_url = i.find_elements(by=By.TAG_NAME, value="div")
+				#for e in videos_url:
+				#	print(e.get_attribute('innerHTML'))
+				#	print(" ")
+		except: print(traceback.format_exc())
 
-		primer_link = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]")
-		print(" ")
+		#primer_link = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]")
+		#print(" ")
 		#print(primer_link[0])
-		for c in primer_link: pass
+		#for c in primer_link: pass
 			#print(c.tag_name)
 			#print(c.text)
 		#texto = browser.find_elements(by=By.XPATH, value="/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/div[1]/div[1]/div/a/h3")
@@ -235,7 +251,7 @@ class NuevaBusquedaClass(View):
 			for d in lista:
 				url = d.get_attribute("href")
 				try:
-					if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url:
+					if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url and "https://www.google.com" not in url:
 						#print("url")
 						#print(url)
 						#print(" ")
@@ -257,26 +273,48 @@ class NuevaBusquedaClass(View):
 			di["url"] = "http://noticiasdestacadas.com"
 			di["texto"] = "Noticias destacadas"
 			datos.insert(0,di)
+		print(" ")
+		print(lista_url)
 		f = open("paisesdos.yml", "r")
 		lista_paises = {}
 		for x in f:
 			pais = x.split()
 			lista_paises[pais[0]] = pais[1].lower()
+		# try:
+		# 	datos_resultado_busqueda = ""
+		# 	datos_busqueda = Busqueda.objects.filter(
+		# 		busqueda__exact = busqueda,
+		# 		proyecto__exact = proyecto
+		# 	)
+		# 	print(" ")
+		# 	print("datos_busqueda")
+		# 	print(datos_busqueda.count())
+		# 	if datos_busqueda.count() > 0:
+		# 		datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda, proyecto__exact = proyecto)
+		# 		datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
+		# except: 
+		# 	print("error")
+		# 	print(traceback.format_exc())
+		# 	datos_busqueda = ""
+		
 		try:
 			datos_resultado_busqueda = ""
 			datos_busqueda = Busqueda.objects.filter(
 				busqueda__exact = busqueda,
 				proyecto__exact = proyecto
 			)
-			print(" ")
-			print("datos_busqueda")
-			print(datos_busqueda.count())
+			#print(" ")
+			#print("datos_busqueda")
+			#print(datos_busqueda.count())
 			if datos_busqueda.count() > 0:
-				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda, proyecto__exact = proyecto)
-				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(busqueda__pk = datos_busqueda.id)
+				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
+				datos_resultado_busqueda = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion order by fecha_modificacion desc limit 1'.format(datos_busqueda.id))
+				for i in datos_resultado_busqueda:
+					idstringg = i.idstring
+				datos_resultado_busqueda = ResultadoBusqueda.objects.filter(idstring = idstringg)
 
 		except: 
-			print("error")
+			print("error datos busqueda")
 			print(traceback.format_exc())
 			datos_busqueda = ""
 		
