@@ -390,6 +390,11 @@ class GuardarResultadosBusquedaClass(View):
 			now = datetime.now()
 			now = now.strftime("%d-%m-%Y %H:%M")
 			tiempo = datetime.strptime(now, '%d-%m-%Y %H:%M')
+			try: titulo = i["titulo"]
+			except: titulo = ""
+			try: descripcion = i["descripcion"]
+			except: descripcion = ""
+
 			
 			b3 = ResultadoBusqueda(
 				url = i["url"], 
@@ -399,8 +404,8 @@ class GuardarResultadosBusquedaClass(View):
 				posicion = count,
 				fecha_modificacion = tiempo,
 				idstring = result_str,
-				titulo = i["titulo"],
-				descripcion = i["descripcion"]
+				titulo = titulo,
+				descripcion = descripcion
 			)
 			b3.save()
 			count += 1
