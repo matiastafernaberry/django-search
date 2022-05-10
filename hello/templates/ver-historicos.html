@@ -6,7 +6,15 @@
   <div>
     <div class="container">
         <div class="row">
-          <div class="col-sm-5"></div>
+          <div class="col-sm-5">
+            {% for item in datos %}
+            {% if forloop.counter0 == 0 %}
+                <a href="/historicos/{{item.busqueda.id}}/">
+                  /historicos/{{item.busqueda.id}}/
+                </a>
+            {% endif %}
+            {% endfor %}
+          </div>
           <div class="col-sm-5">
             <h3>Histórico</h3>
           </div>
