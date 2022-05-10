@@ -19,4 +19,4 @@ class ResultadoBusqueda(models.Model):
     posicion = models.IntegerField(blank=True, null=True)
     idstring = models.CharField(max_length=500)
     titulo = models.CharField(max_length=500)
-    descripcion = models.CharField(max_length=500)
+    descripcion = models.CharField(max_length=1500)
