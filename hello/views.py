@@ -166,7 +166,7 @@ class NuevaBusquedaClass(View):
 		if not paises: paises = "com"
 		
 		options = Options()
-		options.add_argument("--headless") #para que se abra el navegador 
+		options.add_argument("--headless") #para que se no abra el navegador 
 		options.add_argument("window-size=1400,600")
 		options.add_argument("--enable-javascript")
 		#options.add_argument("javascript.enabled", True)
@@ -247,21 +247,24 @@ class NuevaBusquedaClass(View):
 			#print(c.text)
 			lista = c.find_elements(by=By.TAG_NAME, value="a")
 			count,coun = 0,0
-			di = {}
+			
 			for d in lista:
 				url = d.get_attribute("href")
 				try:
 					if "https://webcache" not in url and "https://translate" not in url and "http://webcache" not in url and "https://www.google.com" not in url:
 						#print("url")
 						#print(url)
+						#print(c.text)
+						#print(lista_url)
 						#print(" ")
-						try: x = di["url"]
-						except:
-							if url not in lista_url: 
-								di["url"] = url
-								di["texto"] = c.text
-								datos.append(di)
-								lista_url.append(url)
+						#try: x = di["url"]
+						#except:
+						if url not in lista_url: 
+							di = {}
+							di["url"] = url
+							di["texto"] = c.text
+							datos.append(di)
+							lista_url.append(url)
 						count += 1
 				except: print(traceback.format_exc())
 			coun += 1

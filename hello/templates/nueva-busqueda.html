@@ -67,7 +67,9 @@
                   </select>
                 {% endif %}
               </div>
-              <button type="submit" class="btn  btn-eye guardar-evaluciones">Búsqueda</button>
+              <div class="form-group text-center">
+                <button type="submit" class="btn  btn-eye guardar-evaluciones text-center" id="id_busqueda">Búsqueda</button>
+              </div>
             </form>
         </div>
         <div class="col-sm-3">&nbsp;</div>
@@ -227,6 +229,10 @@
   $("#guardar-evaluaciones").click(function() {
     saveEvalucaion();
     $(this).prop("disabled", false);
+  });
+  $("#id_busqueda").click(function() {
+    $(this).prop("disabled", false);
+    $(this).html("Cargando ...");
   });
   //saveEvalucaion();
   </script>
