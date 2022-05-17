@@ -7,6 +7,7 @@ class Busqueda(models.Model):
     busqueda = models.CharField(max_length=100)
     tipobusqueda = models.CharField(max_length=100)
     pais = models.CharField(max_length=100)
+    
 
 
 class ResultadoBusqueda(models.Model):
@@ -20,3 +21,6 @@ class ResultadoBusqueda(models.Model):
     idstring = models.CharField(max_length=500)
     titulo = models.CharField(max_length=500)
     descripcion = models.CharField(max_length=1500)
+    score = models.CharField(max_length=100)
+
+

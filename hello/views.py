@@ -241,13 +241,13 @@ class NuevaBusquedaClass(View):
 		texto = browser.find_elements(by=By.CSS_SELECTOR, value=".g")
 		datos = []
 		lista_url = []
+		count = 0		
 		for c in texto:
 			#print(c.get_attribute('innerHTML'))
 			#print(" ")
 			#print(c.text)
 			lista = c.find_elements(by=By.TAG_NAME, value="a")
-			count,coun = 0,0
-			
+				
 			for d in lista:
 				url = d.get_attribute("href")
 				try:
@@ -259,25 +259,27 @@ class NuevaBusquedaClass(View):
 						#print(" ")
 						#try: x = di["url"]
 						#except:
-						if url not in lista_url: 
-							di = {}
-							di["url"] = url
-							di["texto"] = c.text
-							datos.append(di)
-							lista_url.append(url)
+						print(" ")
+						print(count)
+						if count < 21:
+							if url not in lista_url: 
+								di = {}
+								di["url"] = url
+								di["texto"] = c.text
+								datos.append(di)
+								lista_url.append(url)
 						count += 1
 				except: print(traceback.format_exc())
-			coun += 1
 
-		print("noticias destacadas")
-		print(noticias_destacadas)
+		#print("noticias destacadas")
+		#print(noticias_destacadas)
 		if noticias_destacadas == "Noticias destacadas":
 			di = {}
 			di["url"] = "http://noticiasdestacadas.com"
 			di["texto"] = "Noticias destacadas"
 			datos.insert(0,di)
-		print(" ")
-		print(lista_url)
+		#print(" ")
+		#print(lista_url)
 		f = open("paisesdos.yml", "r")
 		lista_paises = {}
 		for x in f:
@@ -303,14 +305,13 @@ class NuevaBusquedaClass(View):
 		try:
 			datos_resultado_busqueda = ""
 			datos_busqueda = Busqueda.objects.filter(
-				busqueda__exact = busqueda,
 				proyecto__exact = proyecto
 			)
 			#print(" ")
 			#print("datos_busqueda")
 			#print(datos_busqueda.count())
 			if datos_busqueda.count() > 0:
-				datos_busqueda = Busqueda.objects.get(busqueda__exact = busqueda)
+				datos_busqueda = Busqueda.objects.get(proyecto__exact = proyecto)
 				datos_resultado_busqueda = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion order by fecha_modificacion desc limit 1'.format(datos_busqueda.id))
 				for i in datos_resultado_busqueda:
 					idstringg = i.idstring
@@ -349,6 +350,7 @@ class GuardarResultadosBusquedaClass(View):
 			busqueda__exact = busqueda["busqueda"],
 			proyecto__exact = busqueda["proyecto"]
 		)
+		bus = {}
 		if datos_busqueda.count() == 0:
 			b2 = Busqueda(
 				proyecto = (busqueda["proyecto"]).lower(), 
@@ -357,6 +359,7 @@ class GuardarResultadosBusquedaClass(View):
 				pais = busqueda["pais"]
 			)
 			b2.save()
+			bus = b2
 			id_resultados = b2.id
 		else:
 			datos_busqueda = Busqueda.objects.get(
@@ -368,6 +371,7 @@ class GuardarResultadosBusquedaClass(View):
 		count = 1
 		letters = string.ascii_lowercase
 		result_str = ''.join(random.choice(letters) for i in range(10))
+		suma_puntajes = 0
 		for i in datos:
 			if count == 1: puntaje = 0.095
 			if count == 2: puntaje = 0.090
@@ -397,7 +401,8 @@ class GuardarResultadosBusquedaClass(View):
 			except: titulo = ""
 			try: descripcion = i["descripcion"]
 			except: descripcion = ""
-
+			if i["evalucion"] == "favorable" or  i["evalucion"] == "neutral":
+				suma_puntajes += puntaje
 			
 			b3 = ResultadoBusqueda(
 				url = i["url"], 
@@ -412,6 +417,12 @@ class GuardarResultadosBusquedaClass(View):
 			)
 			b3.save()
 			count += 1
+		
+		datos_busqueda = ResultadoBusqueda.objects.filter(idstring = result_str)
+		for i in datos_busqueda:
+			b4 = ResultadoBusqueda.objects.get(pk = i.id)
+			b4.score = str(round(suma_puntajes * 100,1))
+			b4.save()
 
 		f = open("paises.yml", "r")
 		lista_paises = {}
@@ -435,8 +446,6 @@ class PreVerhistoricosClass(View):
 		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, url, evaluacion, puntaje, posicion, id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY busqueda_id'.format(id))
 		#datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion order by fecha_modificacion desc limit 1'.format(id))
 		datos = ResultadoBusqueda.objects.raw('SELECT  fecha_modificacion, MAX(id) as id FROM hello_resultadobusqueda where busqueda_id = {} GROUP BY fecha_modificacion'.format(id))
-		#for i in datos:
-		#	print(i.fecha_modificacion.strftime("%m-%d-%Y %H:%M"))
 		dataResponse = {
 			'status': "success",
 			'code': 200,

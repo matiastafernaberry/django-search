@@ -10,7 +10,7 @@
             {% for item in datos %}
             {% if forloop.counter0 == 0 %}
                 <a href="/historicos/{{item.busqueda.id}}/">
-                  /historicos/{{item.busqueda.id}}/
+                  volver atrás
                 </a>
             {% endif %}
             {% endfor %}
@@ -18,27 +18,32 @@
           <div class="col-sm-5">
             <h3>Histórico</h3>
           </div>
-          <div class="col-sm-2 score">
-            <div class="row">
-              <div class="col-sm-12">Score</div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <h2 id="score_value">0</h2>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-10">
             <table class="table table-bordered">
-              
               <tbody>
                 {% for item in datos %}
                 {% if forloop.counter0 == 0 %}
                 <tr>
-                  <td>{{item.fecha_modificacion}}</td>
+                  <td>
+                    <p>{{item.fecha_modificacion}}</p>
+                    <p><strong>Proyecto:</strong> {{item.busqueda.proyecto}}</p>
+                    <p><strong>Búsqueda:</strong> {{item.busqueda.busqueda}}</p>
+                  </td>
+                  <td colspan="2">
+                    <div class="score">
+                      <div class="row">
+                        <div class="">Score</div>
+                      </div>
+                      <div class="row">
+                        <div class="">
+                          <h2 id="score_value">0</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
                 </tr>
                 {% endif %}
                 <tr>

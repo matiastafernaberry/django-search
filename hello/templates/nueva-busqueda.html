@@ -59,7 +59,7 @@
               <div class="form-group">
                 <!--label for="exampleInputPassword1">Pais</label-->
                 {% if lista_paises %}
-                  <select class="custom-select mr-sm-2" id="id_paises" name="paises" placeholder="Pais">
+                  <select class="custom-select mr-sm-2" id="id_paises" name="paises" placeholder="Pais" required="">
                     <option selected value="">Pais</option>
                     {% for key, value in lista_paises.items %}  
                       <option value="{{value}}">{{key}}</option>
